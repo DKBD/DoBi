@@ -16,18 +16,18 @@
 \centerline{\large MATEMATIKOS IR INFORMATIKOS FAKULTETAS}
 \vskip 120pt
 \vskip 50pt
-\centerline{\Large Kursinio darbo pradinë duomenø analizë}
+\centerline{\Large Kursinio darbo pradinï¿½ duomenï¿½ analizï¿½}
 \begin{center}
-    {\bf \huge Nekilnojamo turto rinkos duomenø analizë\\
+    {\bf \huge Nekilnojamo turto rinkos duomenï¿½ analizï¿½\\
     \smallskip  
     \smallskip}
 \end{center}
 \bigskip
 \vskip 120pt
 \raggedleft
-{\large\textbf{Dovilë Esmantaitë}\\Ekonometrija III kursas 2 grupë\\ \textbf{Birutë Þabinskaitë}\\Ekonometrija III kursas 1 grupë}
+{\large\textbf{Dovilï¿½ Esmantaitï¿½}\\Ekonometrija III kursas 2 grupï¿½\\ \textbf{Birutï¿½ ï¿½abinskaitï¿½}\\Ekonometrija III kursas 1 grupï¿½}
 \vskip 10pt
-{\large Darbo vadovas:\\ lekt.\textbf{V. Maniuðis}}
+{\large Darbo vadovas:\\ lekt.\textbf{V. Maniuï¿½is}}
 \vskip 90pt
 \centerline{\large VILNIUS 2011}
 \end{titlepage}
@@ -36,72 +36,72 @@
 \newpage
 %\pagestyle{plain}
 
-\centerline{\textbf{\large Duomenø grupavimas}}
+\centerline{\textbf{\large Duomenï¿½ grupavimas}}
 \bigskip
-\hspace{1cm}Nekilnojamo turto kaina priklauso nuo keturiø pagrindiniø veiksniø grupiø:
+\hspace{1cm}Nekilnojamo turto kaina priklauso nuo keturiï¿½ pagrindiniï¿½ veiksniï¿½ grupiï¿½:
 \begin{itemize}
-\item  fiziniø
-\item socialiniø
-\item ekonominiø
-\item politiniø
+\item  fiziniï¿½
+\item socialiniï¿½
+\item ekonominiï¿½
+\item politiniï¿½
 \end{itemize}
-\hspace*{1cm} Ðiame darbe atliksime pradinæ fiziniø veiksniø lemiamà vieno kvadratinio metro namo kainà Vilniuje ir Vilniaus rajone duomenø analizæ.\\
-\hspace*{1cm}Pagrindiniai fiziniai veiksniai veikiantys namø kainà yra ðie:
+\hspace*{1cm} ï¿½iame darbe atliksime pradinï¿½ fiziniï¿½ veiksniï¿½ lemiamï¿½ vieno kvadratinio metro namo kainï¿½ Vilniuje ir Vilniaus rajone duomenï¿½ analizï¿½.\\
+\hspace*{1cm}Pagrindiniai fiziniai veiksniai veikiantys namï¿½ kainï¿½ yra ï¿½ie:
 \begin{itemize}
 \item  nekilnojamo turto vieta
-\item kambariø skaièius
-\item pastato laikanèiøjø konstrukcijø rûðis
-\item namo fizinë bûklë
+\item kambariï¿½ skaiï¿½ius
+\item pastato laikanï¿½iï¿½jï¿½ konstrukcijï¿½ rï¿½ï¿½is
+\item namo fizinï¿½ bï¿½klï¿½
 \item bendras namo plotas
 \item statybos metai
-\item vaizdas pro langà, triukðmas ir t.t.
+\item vaizdas pro langï¿½, triukï¿½mas ir t.t.
 \end{itemize}
-\hspace*{1cm}Prieð atliekant daugialypæ regresinæ analizæ, mums reikalinga pradinë duomenø analizë. Ðiam darbui atlikti duomenys buvo surinkti ið internetiniø svetainiø : www.skelbiu.lt, www.aruodas.lt. Pradinius duomenis sudaro 100 namø apraðø, t.y. 1200 ávairiø reikðmiø. Tolesnëje kursinio darbo raðymo eigoje duomenys bus toliau renkami, kad atlikta analizë bûtø kuo tikslesnë ir iðsamesnë.\\
-\hspace*{1cm} Veiksnius, átakojanèius vieno kvadratinio metro namo kainà Vilniuje ir Vilniaus rajone suskirstëme á grupes:\\
+\hspace*{1cm}Prieï¿½ atliekant daugialypï¿½ regresinï¿½ analizï¿½, mums reikalinga pradinï¿½ duomenï¿½ analizï¿½. ï¿½iam darbui atlikti duomenys buvo surinkti iï¿½ internetiniï¿½ svetainiï¿½ : www.skelbiu.lt, www.aruodas.lt. Pradinius duomenis sudaro 100 namï¿½ apraï¿½ï¿½, t.y. 1200 ï¿½vairiï¿½ reikï¿½miï¿½. Tolesnï¿½je kursinio darbo raï¿½ymo eigoje duomenys bus toliau renkami, kad atlikta analizï¿½ bï¿½tï¿½ kuo tikslesnï¿½ ir iï¿½samesnï¿½.\\
+\hspace*{1cm} Veiksnius, ï¿½takojanï¿½ius vieno kvadratinio metro namo kainï¿½ Vilniuje ir Vilniaus rajone suskirstï¿½me ï¿½ grupes:\\
 \smallskip
-\hspace*{1cm}\textbf{Namø grupavimas pagal nekilnojamo turto vietà.}
-Á ketvirtàjà nekilnojamo turto vietos grupæ áeina ðios Vilniaus miesto teritorijos: Centras, Senamiestis, Uþupis. Treèià grupæ sudaro: Naujamiestis, Antakalnis, Þvërynas, Pavilnys. Antroje grupëje yra: Virðuliðkës, Karoliniðkës, Lazdynai, Fabijoniðkës, Justiniðkës, Ðeðkinë, Paðilaièiai, Pilaitë, Þirmûnai, Jeruzalë, Baltupiai, Santariðkës. Pirmà grupæ sudaro: Þemieji Paneriai, Aukðtieji Paneriai, Grigiðkës, Naujoji Vilnia ir visi kiti mikrorajonai.\\
+\hspace*{1cm}\textbf{Namï¿½ grupavimas pagal nekilnojamo turto vietï¿½.}
+ï¿½ ketvirtï¿½jï¿½ nekilnojamo turto vietos grupï¿½ ï¿½eina ï¿½ios Vilniaus miesto teritorijos: Centras, Senamiestis, Uï¿½upis. Treï¿½iï¿½ grupï¿½ sudaro: Naujamiestis, Antakalnis, ï¿½vï¿½rynas, Pavilnys. Antroje grupï¿½je yra: Virï¿½uliï¿½kï¿½s, Karoliniï¿½kï¿½s, Lazdynai, Fabijoniï¿½kï¿½s, Justiniï¿½kï¿½s, ï¿½eï¿½kinï¿½, Paï¿½ilaiï¿½iai, Pilaitï¿½, ï¿½irmï¿½nai, Jeruzalï¿½, Baltupiai, Santariï¿½kï¿½s. Pirmï¿½ grupï¿½ sudaro: ï¿½emieji Paneriai, Aukï¿½tieji Paneriai, Grigiï¿½kï¿½s, Naujoji Vilnia ir visi kiti mikrorajonai.\\
 
 \begin{table}[H]
-\emph{\caption{Namø grupavimas pagal nekilnojamo turto vietà}}
+\emph{\caption{Namï¿½ grupavimas pagal nekilnojamo turto vietï¿½}}
 \begin{center}
     \begin{tabular}{ | l | l | l |}
     \hline
-    \textbf{Nekilnojamo turto vieta} & \textbf{Grupë} \\ \hline
-    Centras, Senamiestis, Uþupis & 4 \\ \hline
-    Naujamiestis, Antakalnis, Þvërynas, Pavilnys & 3 \\ \hline
-   Virðuliðkës, Karoliniðkës, Lazdynai, Fabijoniðkës, Justiniðkës, Ðeðkinë, & \\ 
-    Paðilaièiai, Pilaitë, Þirmûnai, Jeruzalë, Baltupiai, Santariðkës  & 2 \\ \hline
-   Þemieji Paneriai, Grigiðkës, Naujoji Vilnia ir visi kiti mikrorajonai & 1 \\
+    \textbf{Nekilnojamo turto vieta} & \textbf{Grupï¿½} \\ \hline
+    Centras, Senamiestis, Uï¿½upis & 4 \\ \hline
+    Naujamiestis, Antakalnis, ï¿½vï¿½rynas, Pavilnys & 3 \\ \hline
+   Virï¿½uliï¿½kï¿½s, Karoliniï¿½kï¿½s, Lazdynai, Fabijoniï¿½kï¿½s, Justiniï¿½kï¿½s, ï¿½eï¿½kinï¿½, & \\ 
+    Paï¿½ilaiï¿½iai, Pilaitï¿½, ï¿½irmï¿½nai, Jeruzalï¿½, Baltupiai, Santariï¿½kï¿½s  & 2 \\ \hline
+   ï¿½emieji Paneriai, Grigiï¿½kï¿½s, Naujoji Vilnia ir visi kiti mikrorajonai & 1 \\
     \hline
     \end{tabular}
 \end{center}
 \end{table}
 
-\hspace*{1cm}\textbf{Namø grupavimas pagal laikanèiàsias konstrukcijas.}
- Pirmà grupæ sudaro mediniai, antrà - blokiniai, treèià - mûriniai namai.
+\hspace*{1cm}\textbf{Namï¿½ grupavimas pagal laikanï¿½iï¿½sias konstrukcijas.}
+ Pirmï¿½ grupï¿½ sudaro mediniai, antrï¿½ - blokiniai, treï¿½iï¿½ - mï¿½riniai namai.
  \begin{table}[H]
-\emph{\caption{Namø grupavimas pagal laikanèiàsias konstrukcijas}}
+\emph{\caption{Namï¿½ grupavimas pagal laikanï¿½iï¿½sias konstrukcijas}}
 \begin{center}
     \begin{tabular}{ | l | l | l |}
     \hline
-   \textbf{ Laikanèiøjø konstrukcijø rûðys} & \textbf{Grupë} \\ \hline
-    Mûrinës & 3 \\ \hline
-    Blokinës & 2 \\ \hline
-    Medinës & 1 \\ 
+   \textbf{ Laikanï¿½iï¿½jï¿½ konstrukcijï¿½ rï¿½ï¿½ys} & \textbf{Grupï¿½} \\ \hline
+    Mï¿½rinï¿½s & 3 \\ \hline
+    Blokinï¿½s & 2 \\ \hline
+    Medinï¿½s & 1 \\ 
     \hline
     \end{tabular}
 \end{center}
 \end{table}
 
 
-\hspace*{1cm}\textbf{Namø grupavimas pagal jø fizinæ bûklæ.} Pirmà grupæ sudaro namai, kurie yra ne naujos statybos ir jiems reikia remonto; antrà - ne naujos statybos, bet suremontuoti; treèià - naujos statybos namai, tik su daline apdaila; ketvirtà - visiðkai naujos statybos ir pilnai árengti namai.
+\hspace*{1cm}\textbf{Namï¿½ grupavimas pagal jï¿½ fizinï¿½ bï¿½klï¿½.} Pirmï¿½ grupï¿½ sudaro namai, kurie yra ne naujos statybos ir jiems reikia remonto; antrï¿½ - ne naujos statybos, bet suremontuoti; treï¿½iï¿½ - naujos statybos namai, tik su daline apdaila; ketvirtï¿½ - visiï¿½kai naujos statybos ir pilnai ï¿½rengti namai.
 \begin{table}[H]
-\emph{\caption{Namø grupavimas pagal jø fizinæ bûklæ}}
+\emph{\caption{Namï¿½ grupavimas pagal jï¿½ fizinï¿½ bï¿½klï¿½}}
 \begin{center}
     \begin{tabular}{| l | l | l |}
     \hline
-    \textbf{Bûklë} & \textbf{Grupë} \\ \hline
+    \textbf{Bï¿½klï¿½} & \textbf{Grupï¿½} \\ \hline
     Nujas (nereikia remonto) &4   \\ \hline
     Naujas (reikia remonto) & 3 \\ \hline
     Senas (nereikia remonto) & 2 \\  \hline
@@ -111,15 +111,15 @@
 \end{center}
 \end{table}
 
-\centerline{\textbf{\large Pradiniø duomenø pagrindiniai statistiniai rodikliai}}
+\centerline{\textbf{\large Pradiniï¿½ duomenï¿½ pagrindiniai statistiniai rodikliai}}
 \bigskip
-\hspace*{1cm}Toliau nagrinëjome vieno kvadratinio metro namø kainø Vilniuje ir Vilniaus rajone pagrindinius statistinius rodiklius. Vidutinë vieno kvadratinio metro namo kaina yra 4007,73 Lt, o standartinis nuokrypis 2944,41 Lt. Galime teigti, kad kainos gana plaèiai pasiskirsèiusios apie vidurká. Didþiausia, ið 100 dabar turimø duomenø, vieno kvadratinio metro namo kaina yra 18040,24 Lt, maþiausia -1224,49 Lt.
+\hspace*{1cm}Toliau nagrinï¿½jome vieno kvadratinio metro namï¿½ kainï¿½ Vilniuje ir Vilniaus rajone pagrindinius statistinius rodiklius. Vidutinï¿½ vieno kvadratinio metro namo kaina yra 4007,73 Lt, o standartinis nuokrypis 2944,41 Lt. Galime teigti, kad kainos gana plaï¿½iai pasiskirsï¿½iusios apie vidurkï¿½. Didï¿½iausia, iï¿½ 100 dabar turimï¿½ duomenï¿½, vieno kvadratinio metro namo kaina yra 18040,24 Lt, maï¿½iausia -1224,49 Lt.
 \begin{table}[H]
-\emph{\caption{Pagrindiniai namø 1 kvadr.m.  statistiniai rodikliai}}
+\emph{\caption{Pagrindiniai namï¿½ 1 kvadr.m.  statistiniai rodikliai}}
 \begin{center}
     \begin{tabular}{| l | l | l |}
     \hline
-    Variacijø skaièius & 100 \\ \hline
+    Variacijï¿½ skaiï¿½ius & 100 \\ \hline
     Aritmetinis vidurkis & 4007,73 Lt \\ \hline
     Standartinis nuokrypis & 2944,41 Lt \\ \hline
     Minimumas & 1224,49 Lt\\ \hline
@@ -129,16 +129,16 @@
 \end{center}
 \end{table}
 
-\hspace*{1cm}1 paveiksle iðbrëþëme staèiakampæ diagramà, kuri vaizduoja vieno kvadratinio
- metro namø kainas, pagal iðskirtas keturias nekilnomajo turto vietos grupes, skaitines charakteristikas. Plaèiau nagrinësime tik pirmàjà grupæ. Ið pateikto grafiko matome, kad didþiausia ðios grupës vieno kvadratinio metro namo kaina yra 13750 Lt, maþiausia - 1224,49 Lt. Taip pat galime pamatyti, kad mediana yra 2909,55 Lt, t.y. reikðmë, kuri mûsø imtá padalina á dvi dalis. Apatinis kvartilis yra 2102,56 Lt (uþ jo lieka 25 procentai duomenø),  virðutinis - 3740 Lt (uþ jo lieka 75 procentai duomenø).
+\hspace*{1cm}1 paveiksle iï¿½brï¿½ï¿½ï¿½me staï¿½iakampï¿½ diagramï¿½, kuri vaizduoja vieno kvadratinio
+ metro namï¿½ kainas, pagal iï¿½skirtas keturias nekilnomajo turto vietos grupes, skaitines charakteristikas. Plaï¿½iau nagrinï¿½sime tik pirmï¿½jï¿½ grupï¿½. Iï¿½ pateikto grafiko matome, kad didï¿½iausia ï¿½ios grupï¿½s vieno kvadratinio metro namo kaina yra 13750 Lt, maï¿½iausia - 1224,49 Lt. Taip pat galime pamatyti, kad mediana yra 2909,55 Lt, t.y. reikï¿½mï¿½, kuri mï¿½sï¿½ imtï¿½ padalina ï¿½ dvi dalis. Apatinis kvartilis yra 2102,56 Lt (uï¿½ jo lieka 25 procentai duomenï¿½),  virï¿½utinis - 3740 Lt (uï¿½ jo lieka 75 procentai duomenï¿½).
 \begin{figure}[H]
-  \caption{Staèiakampë diagrama.}
+  \caption{Staï¿½iakampï¿½ diagrama.}
   \centering
     \includegraphics[width=1\textwidth]{boksas.pdf}
 \end{figure}
 
-\centerline{\textbf{\large Ryðiø tarp namo kainos ir kainà átakojanèiø veiksniø analizë}}
+\centerline{\textbf{\large Ryï¿½iï¿½ tarp namo kainos ir kainï¿½ ï¿½takojanï¿½iï¿½ veiksniï¿½ analizï¿½}}
 \bigskip
-\hspace*{1cm}Koreliacijos koeficientas parodo ryðio tamprumà, o jo þenklas - ryðio pobûdá ir kryptá. Koreliacijos koeficientas tarp vieno kvadratinio metro namo kainos ir nekilnojamo turto vietos yra 0,486. Tai reiðkia, kad ryðys tarp vieno kvadratinio metro namo kainos ir nekilnojamo turto vietos yra vidutiniðkas. Teigiamas þenklas parodo, kad koreliacija - teigiama, o tai reiðkia, kad didëjanti vieno kvadratinio metro namo kaina atitinka vis geresnæ nekilnojamo turto vietos grupæ. Koreliacijos koeficientas tarp vieno kvadratinio metro namo kainos ir namo fizinës bûklës yra 0,199, t.y. silpnas ryðys. Koreliacijos koeficientas tarp vieno kvadratinio metro namo kainos ir namo laikanèiøjø konstrukcijø rûðies yra 0,182. Tai irgi silpnas ryðys. Vëliau padidinta duomenø imtis turëtø patikslinti ðiuos koreliacijos koeficientus.\\
-\hspace*{1cm}Padaræ ðià pradinæ duomenø analizæ, esame jau pasiruoðæ atlikti regresinæ analizæ.
+\hspace*{1cm}Koreliacijos koeficientas parodo ryï¿½io tamprumï¿½, o jo ï¿½enklas - ryï¿½io pobï¿½dï¿½ ir kryptï¿½. Koreliacijos koeficientas tarp vieno kvadratinio metro namo kainos ir nekilnojamo turto vietos yra 0,486. Tai reiï¿½kia, kad ryï¿½ys tarp vieno kvadr. metro namo kainos ir nekilnojamo turto vietos yra vidutiniï¿½kas. Teigiamas ï¿½enklas parodo, kad koreliacija - teigiama, o tai reiï¿½kia, kad didï¿½janti vieno kvadratinio metro namo kaina atitinka vis geresnï¿½ nekilnojamo turto vietos grupï¿½. Koreliacijos koeficientas tarp vieno kvadratinio metro namo kainos ir namo fizinï¿½s bï¿½klï¿½s yra 0,199, t.y. silpnas ryï¿½ys. Koreliacijos koeficientas tarp vieno kvadratinio metro namo kainos ir namo laikanï¿½iï¿½jï¿½ konstrukcijï¿½ rï¿½ï¿½ies yra 0,182. Tai irgi silpnas ryï¿½ys. Vï¿½liau padidinta duomenï¿½ imtis turï¿½tï¿½ patikslinti ï¿½iuos koreliacijos koeficientus.\\
+\hspace*{1cm}Padarï¿½ ï¿½iï¿½ pradinï¿½ duomenï¿½ analizï¿½, esame jau pasiruoï¿½ï¿½ atlikti regresinï¿½ analizï¿½.
 \end{document}
