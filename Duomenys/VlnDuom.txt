@@ -1,0 +1,144 @@
+Kaina	Miestas	Raj	Kamb. Sk	Tipas	Remontas	Árengtumas	Nauja statyba ar ne	Mûrinis ar ne	Namo tipas	Namo plotas	Sklypo plotas	Atstumas iki centro (km)	Pastatymo metai
+270000	Vilnius	Antakalnis	4	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Mûrinis	80	1	8	2010
+950000	Vilnius	Visoriai	3	Namas	Nereikia	Árengtas	Nauja	Nemûrinis	Ràstinis	140	8	10	2007
+353000	Vilnius	Pavilnys	4	Kotedşas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Mûrinis	110	4	12	2011
+449000	Vilnius	Grigiskes	5	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Blokinis	190	4	21	2009
+498000	Vilnius	Antakalnis	3	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	132	6	7	2006
+350000	Vilnius	Pilaite	4	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Blokinis	159	12	8	2011
+5499999	Vilnius	Valakampiai	6	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	400	16	7	2007
+2333444	Vilnius	Pilaite	7	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	470	13	8	2000
+379000	Vilnius	Aukstieji Paneriai	4	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Blokinis	166	8	14	2011
+3999999	Vilnius	Uzupis	4	Namas	Nereikia	Árengtas	Nenauja	Mûrinis	Mûrinis	386	17	2	1990
+790000	Vilnius	Pilaite	5	Namas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Blokinis	234	12	7	2009
+290000	Vilnius	Aukstieji Paneriai	4	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Blokinis	162	9	16	2011
+530000	Vilnius	Pilaite	6	Kotedşas	Reikia	Neárengtas	Nauja	Mûrinis	Blokinis	319	60	8	2009
+549000	Vilnius	Pavilnys	5	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Mûrinis	205	7	12	2011
+940000	Vilnius	Naujoji Vilnia	6	Namas	Nereikia	Árengtas	Nenauja	Mûrinis	Mûrinis	460	9	12	1996
+579000	Vilnius	Zemieji Paneriai	6	Kotedşas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Blokinis	199	3	5	2010
+589000	Vilnius	Antakalnis	5	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Blokinis	183	6	8	2007
+399000	Vilnius	Antakalnis	5	Namas	Nereikia	Árengtas	Nenauja	Mûrinis	Mûrinis	139	9	8	1991
+420000	Vilnius	Pavilnys	5	Namas	Reikia	Árengtas	Nauja	Nemûrinis	Ràstinis	180	14	10	2004
+450000	Vilnius	Pavilnys	5	Namas	Nereikia	Árengtas	Nenauja	Mûrinis	Mûrinis	250	68	12	1995
+660000	Vilnius	Grigiskes	5	Namas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Blokinis	176	8	16	2011
+2000000	Vilnius	Zverynas	6	Kotedşas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Blokinis	233	3	3	2008
+620000	Vilnius	Bajorai	4	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	185	6	11	2007
+1290000	Vilnius	Verkiai	5	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	195	12	7	2006
+1999999	Vilnius	Zverynas	5	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Blokinis	280	8	3	2004
+837000	Vilnius	Bajorai	5	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Blokinis	240	6	11	2009
+450000	Vilnius	Antakalnis	6	Namas	Reikia	Árengtas	Nenauja	Mûrinis	Blokinis	225	4	4	1994
+3459000	Vilnius	Senamiestis	10	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	411	3	3	2007
+750000	Vilnius	Baltupiai	4	Kotedşas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	166	2	7	2007
+850000	Vilnius	Traku Voke	4	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	264	15	15	2009
+195000	Vilnius	Pavilnys	5	Namas	Reikia	Árengtas	Nenauja	Mûrinis	Mûrinis	123	6	8	1997
+499000	Vilnius	Salininkai	5	Namas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Mûrinis	161	19	13	2007
+600000	Vilnius	Bajorai	4	Namas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Blokinis	190	6	11	2008
+660000	Vilnius	Visoriai	4	Kotedşas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	172	3	10	2009
+650000	Vilnius	Antakalnis	6	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	192	6	8	2007
+499000	Vilnius	Vilkpede	5	Namas	Nereikia	Árengtas	Nenauja	Mûrinis	Mûrinis	303	11	9	1989
+1379000	Vilnius	Zverynas	4	Kotedşas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	133	3	3	2007
+700000	Vilnius	Zverynas	3	Kotedşas	Reikia	Árengtas	Nenauja	Mûrinis	Mûrinis	79	3	4	1970
+3500000	Vilnius	Zverynas	7	Namas	Nereikia	Árengtas	Nenauja	Mûrinis	Mûrinis	360	6	3	1997
+140000	Vilnius	Zirmunai	2	Namas	Reikia	Árengtas	Nenauja	Nemûrinis	Medinis	52	3	3	1940
+480000	Vilnius	Zirmunai	5	Kotedşas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Mûrinis	107	3	3	2011
+590000	Vilnius	Antakalnis	4	Kotedşas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Mûrinis	170	2	6	2011
+2100000	Vilnius	Valakampiai	6	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	247	3	8	2005
+6999999	Vilnius	Valakampiai	7	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	388	30	7	2005
+900000	Vilnius	Valakampiai	5	Namas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Mûrinis	230	14	8	2008
+4999999	Vilnius	Valakampiai	6	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	370	3	8	2007
+299000	Vilnius	Zemieji Paneriai	2	Namas	Reikia	Árengtas	Nenauja	Nemûrinis	Medinis	42	11	8	1956
+220000	Vilnius	Zemieji Paneriai	2	Namas	Reikia	Árengtas	Nenauja	Nemûrinis	Medinis	53	8	11	1940
+400000	Vilnius	Zemieji Paneriai	6	Namas	Reikia	Árengtas	Nenauja	Mûrinis	Mûrinis	130	7	8	1974
+579000	Vilnius	Zemieji Paneriai	6	Namas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Mûrinis	199	3	9	2010
+198000	Vilnius	Zemieji Paneriai	3	Kotedşas	Nereikia	Árengtas	Nenauja	Mûrinis	Mûrinis	88	9	11	1940
+120000	Vilnius	Salininkai	4	Namas	Reikia	Árengtas	Nauja	Mûrinis	Mûrinis	98	3	14	2009
+600000	Vilnius	Salininkai	5	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Blokinis	143	6	12	2008
+510000	Vilnius	Salininkai	5	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	236	6	12	2005
+95000	Vilnius	Salininkai	2	Namas	Reikia	Árengtas	Nenauja	Mûrinis	Mûrinis	70	3	14	1989
+490000	Vilnius	Antakalnis	5	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Mûrinis	180	8	6	2009
+299000	Vilnius	Salininkai	5	Namas	Reikia	Árengtas	Nenauja	Mûrinis	Mûrinis	130	5	12	1990
+400000	Vilnius	Salininkai	4	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	155	8	12	2004
+650000	Vilnius	Traku Voke	4	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	251	17	15	2011
+610000	Vilnius	Filaretai	7	Namas	Reikia	Árengtas	Nenauja	Mûrinis	Mûrinis	290	18	8	1981
+380000	Vilnius	Pagiriai	5	Namas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Mûrinis	190	8	16	2009
+399000	Vilnius	Pavilnys	4	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Blokinis	150	6	10	2009
+849000	Vilnius	Grigiskes	5	Namas	Nereikia	Árengtas	Nenauja	Mûrinis	Mûrinis	200	14	16	1997
+265000	Vilnius	Zemieji Paneriai	3	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Blokinis	165	1	9	2009
+530000	Vilnius	Tarande	3	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	170	7,5	13	2006
+550000	Vilnius	Pagiriai	5	Namas	Nereikia	Árengtas	Nenauja	Mûrinis	Mûrinis	300	30	16	1995
+395000	Vilnius	Balsiai	6	Kotedşas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Mûrinis	151	2	13	2011
+300000	Vilnius	Bajorai	5	Namas	Reikia	Árengtas	Nenauja	Mûrinis	Mûrinis	160	8	12	1980
+700000	Vilnius	Balsiai	4	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	120	6	13	2009
+1050000	Vilnius	Zverynas	4	Kotedşas	Nereikia	Árengtas	Nenauja	Mûrinis	Mûrinis	104	3	4	1963
+629000	Vilnius	Naujoji Vilnia	6	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	250	13	10	2007
+315000	Vilnius	Naujoji Vilnia	5	Namas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Blokinis	162	6	10	2008
+680000	Vilnius	Grigiskes	5	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	137	5	16	2005
+725000	Vilnius	Dvarcionys	4	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	217	8	10	2007
+899999	Vilnius	Kalnenai	5	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Mûrinis	263	10	6	2011
+720000	Vilnius	Kalnenai	6	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Mûrinis	214	6	6	2010
+950000	Vilnius	Pavilnys	2	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	383	12	10	2011
+360000	Vilnius	Tarande	4	Kotedşas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Mûrinis	153	3	13	2011
+1444000	Vilnius	Antakalnis	5	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	250	4	4	2009
+499000	Vilnius	Pavilnys	6	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	205	6	8	2008
+999999	Vilnius	Pavilnys	4	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Mûrinis	240	7	10	2009
+600000	Vilnius	Salininkai	5	Kotedşas	Reikia	Árengtas	Nauja	Mûrinis	Mûrinis	143	6	12	2008
+3900000	Vilnius	Zverynas	7	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	587	9	2	2000
+930000	Vilnius	Valakampiai	5	Kotedşas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Mûrinis	210	4	8	2011
+765000	Vilnius	Antakalnis	6	Namas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Mûrinis	216	11	5	2008
+450000	Vilnius	Zirmunai	4	Namas	Nereikia	Irengtas	Nenauja	Nemurinis	Medinis	150	6	5	1940
+475000	Vilnius	Salininkai	4	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Blokinis	143	6	13	2003
+3497000	Vilnius	Snipiskes	6	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Blokinis	363	7	3	2006
+625000	Vilnius	Visoriai	4	Kotedşas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	147	1	10	2004
+435000	Vilnius	Balsiai	5	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Blokinis	160	6	13	2010
+930000	Vilnius	Antakalnis	5	Kotedşas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Mûrinis	210	4	5	2011
+340000	Vilnius	Antakalnis	3	Namas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Mûrinis	125	6	7	2011
+160000	Vilnius	Balsiai	3	Namas	Reikia	Árengtas	Nenauja	Mûrinis	Mûrinis	56	6	14	1986
+315000	Vilnius	Pavilnys	4	Kotedşas	Reikia	Neárengtas	Nauja	Mûrinis	Mûrinis	88	15	7	2010
+1500000	Vilnius	Zverynas	5	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	209	3	2	2001
+430000	Vilnius	Salininkai	4	Namas	Reikia	Árengtas	Nauja	Mûrinis	Mûrinis	150	12	13	2009
+299000	Vilnius	Aukstieji Paneriai	4	Namas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Mûrinis	128	6	14	2011
+1650000	Vilnius	Zujunai	5	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	270	10	11	2009
+399000	Vilnius	Tarande	4	Namas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Blokinis	120	3	10	2011
+2070000	Vilnius	Uzupis	6	Kotedşas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	295	5	2	2004
+480000	Vilnius	Pilaite	8	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Mûrinis	319	6	8	2009
+850000	Vilnius	Bajorai	5	Kotedşas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	217	6	12	2008
+370000	Vilnius	Santariskes	5	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Mûrinis	180	5	8	2010
+1200000	Vilnius	Antakalnis	5	Namas	Reikia	Árengtas	Nauja	Mûrinis	Mûrinis	280	12	11	2005
+750000	Vilnius	Zujunai	4	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	160	8	11	2008
+220000	Vilnius	Antakalnis	5	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Blokinis	140	3	7	2010
+639000	Vilnius	Santariskes	5	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	162	6	8	2001
+199000	Vilnius	Pavilnys	4	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Mûrinis	199	12	7	2009
+980000	Vilnius	Grigiskes	6	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Mûrinis	241	21	16	2010
+750000	Vilnius	Santariskes	6	Kotedşas	Nereikia	Árengtas	Nenauja	Mûrinis	Mûrinis	333	2	8	1996
+300000	Vilnius	Traku Voke	6	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Blokinis	286	10	15	2009
+998000	Vilnius	Traku Voke	5	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Blokinis	270	20	15	2007
+599999	Vilnius	Visoriai	4	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Blokinis	177	6	10	2008
+299000	Vilnius	Traku Voke	4	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Mûrinis	230	15	15	2010
+619000	Vilnius	Antakalnis	5	Namas	Nereikia	Árengtas	Nauja	Mûrinis	Blokinis	188	6	7	2007
+429000	Vilnius	Aukstieji Paneriai	4	Namas	Reikia	Dalinai árengtas	Nauja	Mûrinis	Blokinis	168	8	14	2011
+1580000	Vilnius	Santariskes	5	Kotedşas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	277	4	8	2009
+263000	Vilnius	Zemieji Paneriai	4	Kotedşas	Nereikia	Árengtas	Nauja	Mûrinis	Mûrinis	170	6	9	2010
+595000	Vilnius	Bajorai	5	Namas	Reikia	Neárengtas	Nauja	Mûrinis	Blokinis	200	7	12	2011
+550000	Vilnius	Tarande	4	Kotedşas	Nereikia	Árengtas	Nauja	Mûrinis	Blokinis	270	8	10	2007
+265000	Vilnius	Valakampiai	5	Namas	Nereikia	Árengtas	Nenauja	Mûrinis	Mûrinis	125	6	7	1982
+599999	Vilnius	Baltupiai	4	Namas	Nereikia	Irengtas	Nauja	Murinis	Murinis	177	6	7	2008
+830000	Vilnius	Baltupiai	5	Namas	Nereikia	Irengtas	Nenauja	Murinis	Murinis	204	3	6	1992
+1200000	Vilnius	Baltupiai	4	Kotedzas	Nereikia	Irengtas	Nauja	Murinis	Murinis	20	4	6	2000
+590000	Vilnius	Dvarcionys	5	Namas	Nereikia	Irengtas	Nenauja	Murinis	Murinis	250	11	10	1997
+480000	Vilnius	Dvarcionys	5	Namas	Nereikia	Irengtas	Nenauja	Murinis	Murinis	205	9	10	1992
+109000	Vilnius	Snipiskes	3	Namas	Reikia	Irengtas	Nenauja	Nemûrinis	Medinis	54	2	3	1940
+450000	Vilnius	Snipiskes	2	Namas	Reikia	Irengtas	Nenauja	Nemûrinis	Medinis	29	2	3	1940
+830000	Vilnius	Senamiestis	5	Namas	Nereikia	Irengtas	Nauja	Murinis	Murinis	144	2	2	2003
+140000	Vilnius	Senamiestis	5	Kotedzas	Nereikia	Irengtas	Nenauja	Murinis	Murinis	113	4	2	1940
+3459000	Vilnius	Senamiestis	10	Namas	Nereikia	Irengtas	Nauja	Murinis	Murinis	411	3	2	2007
+269000	Vilnius	Verkiai	3	Kotedzas	Reikia	Dalinai irengtas	Nauja	Murinis	Murinis	88	2	9	2011
+1580000	Vilnius	Verkiai	5	Kotedzas	Nereikia	Irengtas	Nauja	Murinis	Murinis	277	4	9	2009
+815000	Vilnius	Vilkpede	8	Kotedzas	Nereikia	Irengtas	Nauja	Murinis	Murinis	260	6	5	2000
+250000	Vilnius	Zirmunai	1	Kotedzas	Nereikia	Irengtas	Nenauja	Nemurinis	Medinis	30	2	5	1933
+545000	Vilnius	Pagiriai	5	Namas	Nereikia	Irengtas	Nenauja	Murinis	Murinis	300	30	18	1995
+699000	Vilnius	Pagiriai	6	Namas	Reikia	Neirengtas	Nauja	Murinis	Murinis	250	15	18	2010
+490000	Vilnius	Kalnenai	5	Kotedzas	Reikia	Neirengtas	Nauja	Murinis	Murinis	143	4	6	2010
+1250000	Vilnius	Snipiskes	5	Namas	Nereikia	Irengtas	Nauja	Murinis	Murinis	294	7	3	2008
+459000	Vilnius	Filaretai	9	Namas	Reikia	Irengtas	Nenauja	Nemurinis	Medinis	145	6	8	1940
+799000	Vilnius	Zujunai	5	Namas	Reikia	Neirengtas	Nauja	Murinis	Murinis	242	8	11	2009
+517000	Vilnius	Zujunai	5	Namas	Nereikia	Irengtas	Nenauja	Murinis	Murinis	233	20	11	1990
+440000	Vilnius	Kalnenai	5	Namas	Reikia	Neirengtas	Nauja	Murinis	Murinis	182	5	6	2011
