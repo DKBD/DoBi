@@ -1,20 +1,8 @@
 x=read.csv2('C:/Users/Dovile/Desktop/duomvln.csv')
-k=x$Irengt
-z=x$Tipas
-yy=x$Kaina
-d=x$Nplotas
-r=x$Remontas
-q=x$Kamb
-rr=x$Murinis
-b=x$Namotipas
-s=x$Fizine
-e=x$Rajonas
-yyy=yy/d
-boxplot(yyy~e)
-boxplot(yyy~e,xlab='Nekilnojamo turto vietos grupës',ylab='Vieno kvadr.metro namo kaina')
 attach(x)
-boxplot(Kaina~Rajonas)
-rikiavimas<-order(tapply(Kaina,Raj,median))
-Raj<-factor(Raj,levels=levels(Raj)[rikiavimas])
-boxplot(Kaina~Raj,notch=FALSE)
-identify(Kaina~Raj,labels=Raj)
+boxplot(Kaina~Raj)
+boxplot(Kaina~Raj2)
+rikiavimas<-order(tapply(Kaina,Rajonas,median))
+Rajonas<-factor(Rajonas,levels=levels(Rajonas)[rikiavimas])
+boxplot(Kaina~Rajonas,notch=FALSE)
+identify(Kaina~Rajonas,labels=Rajonas)
