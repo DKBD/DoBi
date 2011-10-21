@@ -6,3 +6,8 @@ rikiavimas<-order(tapply(Kaina,Rajonas,median))
 Rajonas<-factor(Rajonas,levels=levels(Rajonas)[rikiavimas])
 boxplot(Kaina~Rajonas,notch=FALSE)
 identify(Kaina~Rajonas,labels=Rajonas)
+y=as.matrix(x[,])
+z=y[Rajonas=='Rajono pavadinimas',]
+zz=z[,1]
+mode(zz)='numeric'
+mean(zz)
