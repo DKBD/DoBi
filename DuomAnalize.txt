@@ -11,3 +11,6 @@ z=y[Rajonas=='Rajono pavadinimas',]
 zz=z[,1]
 mode(zz)='numeric'
 mean(zz)
+rikiavimas<-order(tapply(Kaina,Rajonas,mean))
+Rajonas<-factor(Rajonas,levels=levels(Rajonas)[rikiavimas])
+boxplot(Kaina~Rajonas,notch=FALSE)
