@@ -1,0 +1,8 @@
+summary(lm(Kaina~as.factor(Raj)))
+summary(lm(Kaina~as.factor(Raj)+Tipas)) #tipas nereiksmingas
+summary(lm(Kaina~as.factor(Raj)+as.factor(Fizine))) #Raj biski nereiksmingas
+summary(lm(Kaina~as.factor(Raj)+as.factor(Fizine)+as.factor(Sodai)))
+summary(lm(Kaina~as.factor(Raj)+as.factor(Fizine)+as.factor(Sodai)+Irengtumas))#Irengtumas nereiksmingas
+summary(lm(Kaina~as.factor(Raj)+as.factor(Fizine)+as.factor(Sodai)+Vkamb))#Vieno kamb plotas reiksmingas, biski fizine ir Raj nereiksm
+summary(lm(Kaina~as.factor(Raj)+as.factor(Fizine)+as.factor(Sodai)+Vkamb+as.factor(Ir)))#biski Ireng reiksmingas
+summary(lm(Kaina~as.factor(Raj)+as.factor(Fizine)+as.factor(Sodai)+Vkamb+as.factor(Ir)+Splotas))#Splotas reiksmingas
