@@ -6,3 +6,4 @@ summary(lm(Kaina~as.factor(Raj)+as.factor(Fizine)+as.factor(Sodai)+Irengtumas))#
 summary(lm(Kaina~as.factor(Raj)+as.factor(Fizine)+as.factor(Sodai)+Vkamb))#Vieno kamb plotas reiksmingas, biski fizine ir Raj nereiksm
 summary(lm(Kaina~as.factor(Raj)+as.factor(Fizine)+as.factor(Sodai)+Vkamb+as.factor(Ir)))#biski Ireng reiksmingas
 summary(lm(Kaina~as.factor(Raj)+as.factor(Fizine)+as.factor(Sodai)+Vkamb+as.factor(Ir)+Splotas))#Splotas reiksmingas
+summary(lm(Kaina~as.factor(Raj2)+as.factor(Sodai)+as.factor(Fizine)+Vkamb+as.factor(Ir)+Splotas))#Splotas reiksmingas#Raj du geresnis
