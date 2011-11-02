@@ -6,3 +6,13 @@ summary(lm(Kaina~as.factor(Raj)+as.factor(Fizine)+as.factor(Sodai)+Irengtumas))#
 summary(lm(Kaina~as.factor(Raj)+as.factor(Fizine)+as.factor(Sodai)+Vkamb))#Vieno kamb plotas reiksmingas, biski fizine ir Raj nereiksm
 summary(lm(Kaina~as.factor(Raj)+as.factor(Fizine)+as.factor(Sodai)+Vkamb+as.factor(Ir)))#biski Ireng reiksmingas
 summary(lm(Kaina~as.factor(Raj)+as.factor(Fizine)+as.factor(Sodai)+Vkamb+as.factor(Ir)+Splotas))#Splotas reiksmingas
+summary(lm(Kaina~as.factor(Raj2)+as.factor(Sodai)+as.factor(Fizine)+Vkamb+as.factor(Ir)+Splotas))#Splotas reiksmingas#Raj du geresnis
+#Nauji modeliai su nauja rajono grupe
+summary(lm(Kaina~as.factor(Rajvid)))
+summary(lm(Kaina~as.factor(Rajvid)+as.factor(Tipas)+Remontas+as.factor(Sodai)))
+summary(lm(Kaina~as.factor(Rajvid)+as.factor(Tipas)+as.factor(Ireng)+as.factor(Sodai)))
+summary(lm(Kaina~as.factor(Rajvid)+as.factor(Tipas)+as.factor(Ireng)+as.factor(Sodai)+Statyba))
+summary(lm(Kaina~as.factor(Rajvid)+as.factor(Tipas)+as.factor(Ireng)+as.factor(Sodai)+Statyba+Mur+Splotas+Nplotas))
+summary(lm(Kaina~as.factor(Rajvid)+as.factor(Ireng)+as.factor(Sodai)+Statyba+Splotas+Nplotas))#geriausias mano akyte 
+Vkamb=Nplotas/Kamb
+summary(lm(Kaina~as.factor(Rajvid)+as.factor(Tipas)+as.factor(Ireng)+as.factor(Sodai)+Statyba+Mur+Splotas+Vkamb))
