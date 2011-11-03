@@ -16,3 +16,4 @@ summary(lm(Kaina~as.factor(Rajvid)+as.factor(Tipas)+as.factor(Ireng)+as.factor(S
 summary(lm(Kaina~as.factor(Rajvid)+as.factor(Ireng)+as.factor(Sodai)+Statyba+Splotas+Nplotas))#geriausias mano akyte 
 Vkamb=Nplotas/Kamb
 summary(lm(Kaina~as.factor(Rajvid)+as.factor(Tipas)+as.factor(Ireng)+as.factor(Sodai)+Statyba+Mur+Splotas+Vkamb))
+summary(lm(Kaina~as.factor(Rajvid)+as.factor(Ireng)+as.factor(Sodai)+Statyba+Splotas+Nplotas+as.factor(AtstInt)))#geriausias pridejus atstumo intervalus
