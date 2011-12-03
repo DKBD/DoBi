@@ -1,0 +1,215 @@
+\documentclass[utf8,hyperref={unicode}]{beamer}
+%\documentclass[utf8]{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Berkeley}
+  % \usecolortheme{dove} 
+   \setbeamertemplate{footline}
+   {%
+     \leavevmode%
+    \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm 	plus1fill,rightskip=.3cm]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle \hfill p.
+	\insertpagenumber\enspace iš \insertdocumentendpage\enspace
+    \end{beamercolorbox}}%
+  \vskip0pt%
+}
+}
+ \setbeamertemplate{navigation symbols}{}
+
+\usepackage[english]{babel}
+%\usepackage[utf8x]{inputenc}
+\usepackage[L7x]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{theorem}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+
+\newcommand{\ab}[1]{#1_{\alpha}}
+\newcommand{\wab}[2][\delta]{w_{\alpha}(#2,#1)}
+\newcommand{\normab}[1]{\lVert#1\rVert_{\alpha}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\sprod}[1]{\langle #1 \rangle}
+\DeclareMathOperator{\diam}{diam}
+%\renewcommand{\theenumi}{\roman{enumi}}
+%\renewcommand{\labelenumi}{\theenumi)}
+\theoremstyle{change}\newtheorem{teorema}{Teiginys}
+\theoremstyle{change}\newtheorem{salyga}{}
+%	\vspace*{20pt}
+%	\vspace*{20pt}
+\DeclareMathOperator{\seq}{seq}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\tr}{tr}
+\newcommand{\ds}[1]{\displaystyle{#1}}
+\newcommand{\dlt}[2]{\Delta^{(#1)}_{#2}}
+\newcommand{\norms}[1]{\lVert#1\rVert_{\alpha}^{\seq}}
+\newcommand{\normh}[1]{\lVert#1\rVert}
+\newcommand{\norma}[1]{\lVert #1\rVert_{\alpha}}
+
+\newcommand{\skirt}[2]{\Delta^{(#1)}_{#2}}
+\newcommand{\cp}{\buildrel P\over\longrightarrow}
+\renewcommand{\theenumi}{\roman{enumi}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbf{E}\,} % expectation operator
+\newcommand{\bv}{\bm{v}}
+
+\newcommand{\T}{T}
+\newcommand{\n}{{\bm{n}}}
+\newcommand{\jj}{{\bm{j}}}
+\newcommand{\kk}{{\bm{k}}}
+\newcommand{\bt}{\bm{t}}
+\newcommand{\bu}{\bm{u}}
+\newcommand{\B}{\bm{B}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bi}{\bm{i}}
+\newcommand{\p}{\bm{\pi}}
+\newcommand{\one}{{\bm{1}}}
+
+\newcommand{\nni}{{\bm{n},\bm{i}}}
+\newcommand{\nj}{{\bm{n},\bm{j}}}
+\newcommand{\nk}{{\bm{n},\bm{k}}}
+\newcommand{\kn}{\bm{k}_{\bm{n}}}
+
+\newcommand{\vv}{\bm{\mathrm{v}}}
+\newcommand{\vr}{{\mathrm{v}}}
+\newcommand{\uu}{\bm{\mathrm{u}}}
+\newcommand{\ur}{{\mathrm{u}}}
+
+
+\newcommand{\abs}[1]{\left\vert #1 \right\vert}
+\newcommand{\snk}{\sigma^2_{\bm{n},\bm{k}}}
+\newcommand{\snj}{\sigma^2_{\bm{n},\bm{j}}}
+
+\newcommand{\Rnj}{R_{\bm{n},\bm{j}}}
+\newcommand{\Rnk}{R_{\bm{n},\bm{k}}}
+
+\newcommand{\HH}{\mathrm{H}} % a set of notations for Holder spaces
+\newcommand{\Ha}{\HH_{\alpha}}
+\newcommand{\Hab}{\HH_{\alpha,\beta}}
+\newcommand{\Habo}{\HH_{\alpha,\beta}^o}
+\newcommand{\Hao}{\HH_{\alpha}^o}
+\newcommand{\m}{\mathrm{m}}
+\newcommand{\s}{\bm{s}}
+
+\newcommand{\bb}{\bm{\beta}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\indf}[1]{\mathbf{1}\left( #1 \right)}
+
+\title{Nekilnojamo turto rinkos duomenų analizė}
+%\shorttitle{FCRT daugiamačio indekso procesams}
+\author[Dovilė Esmantaitė Birutė Žabinskaitė]{Dovilė Esmantaitė ir Birutė Žabinskaitė\\ Ekonometrija III kursas\\ Kursinio darbo vadovas: V. Maniušis}
+\institute[Vilnius University] {
+    
+    Vilniaus Universitetas
+    \and
+    
+    Matematikos ir informatikos fakultetas
+ }
+\date{2011 gruodžio 8 d.}
+
+\begin{document}
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tikslai} 
+    \begin{itemize}
+	\item\Large{ Ištirti, kokie yrai namų kainas veikiantys veiksniai;}
+            \vskip 20pt
+            \item Ištirti, kaip namų kainos priklauso nuo ją veikiančių veiksnių.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Duomenys} 
+    \begin{itemize}
+	\item\Large Tiriami 12 namų kainas veikiantys veiksniai;
+	\item Duomenys apima 390 namų aprašų, t.y. 7800 įvairių reikšmių;
+	 \item Duomenys grupuojami.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}\large
+    \frametitle{Duomenų grupavimas } 
+     \begin{table}[H]
+\emph{\caption{Namų grupavimas pagal namo vietą}}
+        \begin{center}
+        \begin{tabular}{ | p{8cm} | l | l |}
+       \hline
+       \textbf{Namo vieta} & \textbf{Grupė} \\ \hline
+    Senamiestis, Užupis, Valakampiai, Žvėrynas, Šnipiškės & 4 \\ \hline
+    Verkiai, Baltupiai, Žirmūnai, Kalnėnai, Santariškės, Visoriai & 3 \\ \hline
+    Pilaitė, Bajorai, Pavilnys, Žemieji Paneriai, Grigiškės, Antakalnis, Tarandė, Zujūnai & 2 \\ \hline
+    Dvarčionys, Aukštieji Paneriai, Balsiai, Naujoji Vilnia, Pagiriai, Salininkai, Vilkpėdė, Trakų Vokė & 1 \\ \hline
+    \end{tabular}
+\end{center}
+\end{table}
+\end{frame}
+
+\begin{frame} 
+    \frametitle{Duomenų analizė: pagrindiniai statistiniai rodikliai} 
+ 	 \begin{table}[H]
+\emph{\caption{Pagrindiniai namų vieno kvadr.m. statistiniai rodikliai }}
+             \begin{center}
+              \begin{tabular}{| l | l | l |}
+    \hline
+    Variacijų skaičius & 390 \\ \hline
+    Aritmetinis vidurkis & 3905 Lt \\ \hline
+    Standartinis nuokrypis & 2418 Lt \\ \hline
+    Minimumas & 1018 Lt\\ \hline
+    Maksimumas & 18041 Lt\\
+    \hline
+        \end{tabular}
+        \end{center}
+        \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Kažkas} 
+    \begin{itemize}
+	\item Kažkas
+	    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Modelio kūrimas}
+    \begin{itemize}
+	\item Modelis tararar
+	
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+    \frametitle{Geriausias modelis}
+    \begin{itemize}
+	\item Modelio parametrai	
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Išvados}  
+    \begin{itemize}
+	\item Kažkas
+	\item Kažkas2
+    \end{itemize}
+
+\end{frame}
+\begin{frame}
+    \frametitle{Taikymas} 
+    \begin{itemize}
+	\item  Kažkas	
+\end{itemize}
+\end{frame}
+
+\end{document}
+
