@@ -1,0 +1,232 @@
+\documentclass[a4paper]{article}
+
+\usepackage[L7x]{fontenc}
+\usepackage[lithuanian]{babel}
+\usepackage{amsmath}
+
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+%\usepackage{array}
+\textwidth = 425pt
+
+\begin{document}
+\begin{titlepage}
+
+\centerline{\bf \large VILNIAUS UNIVERSITETAS}
+\bigskip
+\centerline{\large MATEMATIKOS IR INFORMATIKOS FAKULTETAS}
+\vskip 120pt
+\vskip 50pt
+\centerline{\Large Kursinis darbas}
+\begin{center}
+    {\bf \huge Nekilnojamo turto rinkos duomenø analizë\\
+    \smallskip  
+    \smallskip}
+\end{center}
+\bigskip
+\vskip 120pt
+\raggedleft
+{\large\textbf{Dovilë Esmantaitë}\\Ekonometrija III kursas 2 grupë\\ \textbf{Birutë Þabinskaitë}\\Ekonometrija III kursas 1 grupë}
+\vskip 30pt
+\raggedright
+{\large Kursinio darbo vadovas: lekt.\textbf{V. Maniuðis}\\}
+{\large Vadovo paraðas\underline{\hskip 70pt}\\}
+{\large Darbo áteikimo data\underline{\hskip 70pt}\\}
+\vskip 50pt
+\centerline{\large VILNIUS 2011}
+\end{titlepage}
+%\thispagestyle{empty}
+%\thispagestyle{empty}
+\newpage
+%\pagestyle{plain}
+
+\tableofcontents
+\newpage
+\section{Ávadas}
+\hspace*{0,52cm}Pagal funkcinæ paskirtá nekilnojamasis turtas gali bûti iðskiriamas á dvi stambias kategorijas: gyvenamàjá ir komerciná. Ðiame darbe nagrinësime vienà ið gyvenamàjá nekilnojamàjá turtà sudaranèiø daliø -- namus.\\
+\hspace*{0,52cm}Pirminis ðio darbo tikslas yra iðtirti kokie veiksniai daro átakà namø kainoms Vilniuje ir Vilniaus rajone. Siekiant atlikti ðià analizæ, bus naudojami duomenys, surinkti ið internetiniø skelbimø portalø.\\
+\hspace*{0,52cm}Pagrindinis ðio kursinio darbo tikslas -- iðtirti kokià itakà kainai turi jà veikiantys veiksniai.\\
+\hspace*{0,52cm}Pirmoje darbo dalyje atliksime apraðomàjà duomenø analizæ, antroje -- kursime regresiná modelá, kurio pagalba iðsiaiðkinsime kaip namø kainas veikia tirti veiksniai.
+\newpage
+
+\section{Duomenø apraðomoji statistika}
+\subsection{Duomenys ir K-Means metodas}
+\hspace*{0,52cm}Ðio darbo atlikimui duomenys buvo renkami ið internetiniø svetainiø : www.skelbiu.lt, www.aruodas.lt. Juos sudaro 27 Vilniaus miesto rajonai ir 17 Vilniaus rajonø kaimø, t.y. 505 namø apraðø ir tai yra 10100 ávairiø reikðmiø. Kad galëtume atlikti regresinæ analizæ, kainà átakojanèius veiksnius reikëjo sugrupuoti, suskirstyti á tam tikras grupes. Kad galëtume tà padaryti, naudojomës K-Means metodu.\\
+\hspace*{0,52cm}K-Means -- vienas ið reprezentatyviausiø klasterizavimo algoritmø. Klasterizavimas -- tai viena ið duomenø gavybos srièiø. Klasterizavimo algoritmo uþduotis -- objektø suskirstymas á prasmingas grupes -- klasterius, kai jokia papildoma informacija apie tas grupes (jø dydá, kieká, grupavimo poþymius) nëra ið anksto þinoma. Klasterizavimo algoritmas pats, pagal pasirinktus algoritmo parametrus, turi nurodyti, kokioms grupëms priklauso atitinkami ávesties duomenys.
+K-Means pagrindinis parametras yra klasteriø skaièius k. Algoritmas prasideda pirmiausia pasirenkant (atsitiktinai) klasteriø centrus. Tada kiekvienam centrui yra priskiriami jam artimiausi taðkai ir perskaièiuojami nauji centrai. Toliau algoritmas kartojamas iteraciðkai tol, kol klasteriø centrai stabilizuojasi arba kol pasiekiamas maksimalus iteracijø skaièius. K-Means klasterizavimo algoritmas siekia minimizuoti klaidos funkcijà:\\
+\begin{equation}
+E_K=\sum_{k}\parallel x_k-m_{c(x_k)}\parallel ^{2} 
+\end{equation}
+èia K -- klasteriø skaièius, $x_k$ -- ávesties duomuo, kuris priskirtas $m_c$ klasteriui.
+\newpage
+
+\subsection{Duomenø grupavimas}
+\hspace*{0,52cm}\textbf{Namø grupavimas pagal namo vietà.}
+Vilniaus miesto rajonus suskirstëme i keturias grupes, naudodami K-Means metodà. Á ketvirtàjà namø vietos grupæ áeina ðios Vilniaus miesto teritorijos: Senamiestis, Uþupis, Valakampiai, Þvërynas, Ðnipiðkës. Treèià grupæ sudaro: Verkiai, Baltupiai, Þirmûnai, Kalnënai, Santariðkës, Visoriai. Antroje grupëje yra: Pilaitë, Bajorai, Pavilnys, Þemieji Paneriai, Grigiðkës, Antakalnis, Tarandë, Zujûnai. Pirmà grupæ sudaro: Dvarèionys, Aukðtieji Paneriai, Balsiai, Naujoji Vilnia, Pagiriai, Salininkai, Vilkpëdë, Trakø Vokë.\\
+\begin{table}[H]
+\emph{\caption{Namø grupavimas pagal namo vietà}}
+\begin{center}
+    \begin{tabular}{ | p{9cm} | l | l |}
+    \hline
+    \textbf{Namo vieta} & \textbf{Grupë} \\ \hline
+    Senamiestis, Uþupis, Valakampiai, Þvërynas, Ðnipiðkës & 4 \\ \hline
+    Verkiai, Baltupiai, Þirmûnai, Kalnënai, Santariðkës, Visoriai & 3 \\ \hline
+    Pilaitë, Bajorai, Pavilnys, Þemieji Paneriai, Grigiðkës, Antakalnis, Tarandë, Zujûnai & 2 \\ \hline
+    Dvarèionys, Aukðtieji Paneriai, Balsiai, Naujoji Vilnia, Pagiriai, Salininkai, Vilkpëdë, Trakø Vokë & 1 \\ \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+\hspace*{0,01cm}\textbf{Namø grupavimas pagal jø fizinæ bûklæ.} Pirmà grupæ sudaro namai, kurie yra neárengti; antrà -- árengti ir nepilnai árengti namai, kuriems reikia remonto; treèià -- pilnai árengti namai ir jiems nereikia remonto; ketvirtà -- prabangiai árengti namai.
+\begin{table}[H]
+\emph{\caption{Namø grupavimas pagal jø fizinæ bûklæ}}
+\begin{center}
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{Bûklë} & \textbf{Grupë} \\ \hline
+    Prabangiai árengtas &4   \\ \hline
+    Árengtas, nereikia remonto & 3 \\ \hline
+    Árengtas, reikia remonto & 2 \\  \hline
+    Neárengtas & 1 \\
+    \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+\hspace*{0,01cm}\textbf{Namø grupavimas pagal laikanèiàsias konstrukcijas.}
+ Pirmà grupæ sudaro mediniai namai, antrà -- mûriniai namai.
+ \begin{table}[H]
+\emph{\caption{Namø grupavimas pagal laikanèiàsias konstrukcijas}}
+\begin{center}
+    \begin{tabular}{ | l | l | l |}
+    \hline
+   \textbf{ Laikanèiøjø konstrukcijø rûðys} & \textbf{Grupë} \\ \hline
+    Mûrinës & 2 \\ \hline
+    Medinës & 1 \\ 
+    \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+\hspace*{0,01cm}\textbf{Namø grupavimas pagal atstumà iki centro (km).} Pirmà grupæ sudaro namai, kurie priklauso intervalui [1,5); antrà -- namai, priklausantys intervalui [5,10); treèià -- [10,15); ketvirtà -- [15,20); penktà -- [20,25).
+\begin{table}[H]
+\emph{\caption{Namø grupavimas pagal atstumà iki centro (km)}}
+\begin{center}
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{Atstumo intervalas} & \textbf{Grupë} \\ \hline
+    [20,25) &5   \\ \hline
+    [15,20) & 4 \\ \hline
+    [10,15) & 3 \\  \hline
+    [5,10) & 2 \\   \hline
+    [1,5) & 1 \\ \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+\hspace*{0,01cm}Namai buvo grupuojami pagal namø tipus. Iðskyrëme du: namas ir kotedþas. Taip pat namai buvo sugrupuoti pagal tai, ar jie priklauso sodø bendrijoms. Jei priklauso -- 1, jei ne -- 0. Taip pat buvo surinkti duomenys ar namas/kotedþas parduodamas su baldais. Namo statybos metai buvo suskirstyti á dvi grupes, naudojant K-Means metodà, t.y. jei namas statytas 2000 metais ir vëliau, tai jis priklauso 1 grupei, jei namas statytas anksèiau -- priklauso 0 grupei.  
+
+\subsection{Duomenø analizë}
+\hspace*{0,52cm}Nagrinëjome vieno kvadratinio metro namø kainø Vilniuje pagrindinius statistinius rodiklius. Vidutinë vieno kvadratinio metro namo kaina yra 3905 Lt, o standartinis nuokrypis 2418 Lt. Galime teigti, kad kainos gana plaèiai pasiskirsèiusios apie vidurká. Didþiausia vieno kvadratinio metro namo kaina yra 18041 Lt, maþiausia -- 1018 Lt.
+\begin{table}[H]
+\emph{\caption{Pagrindiniai namø vieno kvadr.m. statistiniai rodikliai }}
+\begin{center}
+    \begin{tabular}{| l | l | l |}
+    \hline
+    Variacijø skaièius & 390 \\ \hline
+    Aritmetinis vidurkis & 3905 Lt \\ \hline
+    Standartinis nuokrypis & 2418 Lt \\ \hline
+    Minimumas & 1018 Lt\\ \hline
+    Maksimumas & 18041 Lt\\
+    \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\hspace*{0,52cm}Toliau nagrinëjome paèius duomenis, jø ryðius su kaina. Pirmajame paveiksle matome iðbrëþtà turimø duomenø sklaidos diagramà. Joje galime pastebëti, kad duomenys iðsidëstæ gana tolygiai, taèiau yra iðskirèiø, kurias reikës paðalinti.
+\begin{figure}[H]
+  \caption{Sklaidos diagrama.}
+  \centering
+    \includegraphics[width=0.8\textwidth, height=0.8\textwidth]{1.pdf}
+\end{figure}
+
+\hspace*{0,52cm}Antrajame paveiksle matome staèiakampæ diagramà, kuri vaizduoja vieno kvadratinio metro namø kainas pagal iðskirtas keturias namo vietos grupes, skaitines charakteristikas. Plaèiau panagrinësime tik ketvirtà grupæ. Ið pateikto grafiko matome, kad didþiausia ðios grupës vieno kvadratinio metro kaina yra 18041 Lt, maþiausia -- 2019 Lt. Taip pat galime pamatyti, kad mediana yra 8190,61 Lt, t.y. reikðmë, kuri mûsø imtá padalina á dvi dalis. Apatinis kvartilis yra 5257,35 Lt (uþ jo lieka 25 procentai duomenø),  virðutinis -- 9722,22 Lt (uþ jo lieka 75 procentai duomenø). Namo priklausymas aukðtesnei grupei átakoja didesnæ vieno kvadratinio metro kainà.
+\begin{figure}[H]
+  \caption{Staèiakampë diagrama.}
+  \centering
+    \includegraphics[width=0.8\textwidth, height=0.8\textwidth]{14.pdf}
+\end{figure}
+
+\hspace*{0,52cm}Treèiajame paveiksle matome keturis grafikus. Pirmajame grafike galime pastebëti, kad vieno kvadratinio metro namo kainos yra didesnës, kai namo tipas yra kotedþas. Tai gali sàlygoti, kad beveik visi kotedþai yra naujos statybos. Antrajame grafike matome, kad kainos vis didëja, kai namai priklauso vis aukðtesnëms grupëms, suskirstytoms pagal fizinæ bûklæ. Taigi, didþiausios vieno kvadratinio metro namo kainos yra ketvirtoje grupëje. Treèiajame grafike galime pastebëti, kad namø vieno kvadratinio metro kainos yra didesnës, kai namai priklauso nemûrinës, t.y. medinës namus laikanèiosios konstrukcijos rûðies grupei. Nagrinëjant namo kainos priklausomybæ nuo namà laikanèiøjø konstrukcijø rûðies grupiø gauname, kad namai yra brangesni, kai priklauso mûrinei grupei. Visa tai galima paaiðkinti tuo, kad mediniai namai yra pigesni, nei mûriniai namai, taèiau jø namo plotas maþesnis ir kai kurie mediniai namai priklauso centriniams Vilniaus miesto rajonams, todël nagrinëjant vieno kvadratinio metro kainà gauname, kad mediniai namai yra brangesni. Ketvirtajame grafike matome, kad vieno kvadratinio metro namø kainos maþai priklauso nuo to ar namas yra naujos ar nenaujos statybos.
+\begin{figure}[H]
+  \caption{Staèiakampës diagramos.}
+  \centering
+    \includegraphics[width=0.8\textwidth, height=1\textwidth]{4.pdf}
+\end{figure}
+
+\hspace*{0,52cm}Ketvirtajame paveiksle vël matome keturis grafikus. Pirmajame grafike galime pastebëti, kad vieno kvadratinio metro namø kainos yra didesnës, kai namai nepriklauso sodø bendrijoms. Antrajame grafike matome, kad vieno kvadratinio metro namø kainos yra ðiek tiek aukðtesnës, kai namas yra parduodamas su baldais. Treèiajame grafike galime áþvelgti, kad vieno kvadratinio metro namø kainos labai priklauso nuo atstumø intervalø grupiø, t.y. kuo namai priklauso aukðtesnei grupei, o tai yra didesnio atstumo inervalui nuo centro, namø kainos maþëja. Ketvirtajame grafike matome vieno kvadratinio metro namø kainø priklausomybæ nuo pastatymo metø. Ðis grafikas nieko aiðkaus neparodo, tiesiog matome, kad beveik visi duomenys priklauso intervalui nuo 1940m. iki 2011m.
+\begin{figure}[H]
+  \caption{Staèiakampës diagramos.}
+  \centering
+    \includegraphics[width=0.8\textwidth, height=1\textwidth]{5.pdf}
+\end{figure}
+
+\hspace*{0,52cm}Toliau nagrinëjome ryðius tarp namø vieno kvadratinio metro kainø ir kainas átakojanèiø veiksniø. Koreliacijos koeficientas tarp namø vieno kvadratinio metro kainø ir namø vietø yra 0,637. Tai reiðkia, kad ryðys yra stiprus. Teigiamas þenklas parodo, kad koreliacija -- teigiama, o tai reiðkia, kad didëjanti vieno kvadratinio metro namo kaina atitinka vis geresnæ nekilnojamo turto vietos grupæ. Koreliacijos koeficientas tarp namø vieno kvadratinio metro kainø ir namø fizinës bûklës yra 0,308, t.y. vidutiniðkas ryðys. Koreliacijos koeficientas tarp namø vieno kvadratinio metro kainø ir atstumo intervalø grupiø yra -- 0,515. Tai irgi vidutiniðkas ryðys.\\
+\hspace*{0,52cm}Iðnagrinëjæ duomenis, esame pasiruoðæ atlikti ekonometrinæ analizæ.
+
+\section{Ekonometrinë analizë}
+\subsection{Duomenø normalumo tikrinimas}
+\hspace*{0,52cm}Kadangi tolesnëje ekonometrinëje analizëje remsimës Stjudent'o kriterijumi, todël reikia iðsiaiðkinti ar mûsø turimi duomenys yra pasiskirstæ pagal normaløjá skirstiná. Pirmiausia, pabandykime tai iðsiaiskinti  naudodamiesi histograma. Penktajame paveiksle matome dvi histogramas. Pastebëkime, kad kairioji histograma nëra varpo formos, todël galima daryti iðvadà, kad vieno kvadratinio metro kainos nëra pasiskirsèiusios pagal normaløjá dësná. Logaritmavus duomenis, matome, kad histograma yra varpo formos, todël galime daryti iðvadà, kad logaritmuoti duomenys pasiskirstæ pagal normaløjá dësná. 
+\begin{figure}[H]
+  \caption{Histogramos.}
+  \centering
+    \includegraphics[width=0.8\textwidth, height=0.8\textwidth]{hist.pdf}
+\end{figure}
+
+\hspace*{0,52cm}Nelogaritmuotø duomenø normalumà dar patikrinsime su Jarque-Bera testu. Kadangi p reikðmë yra 0,000218 ir ji maþesnë uþ reikðmingumo lygmená, lygø 0,05, todël nulinæ hipotezæ, kad duomenys pasiskirstæ pagal normaløjá dësná, atmetame.
+\begin{figure}[H]
+  \caption{Jarque-Bera testas.}
+    \includegraphics[width=0.4\textwidth, height=0.15\textwidth]{jarque.pdf}
+\end{figure}
+
+\subsection{Modelio paieðka}
+\hspace*{0,52cm}Dabar bandysime kurti modelius, kuriø pagalba iðsiaiðkinsime kaip vieno kvadratinio metro kaina priklauso nuo kainà lemianèiø veiksniø. Visø pirma, á modelá átrauksime visus mûsø turimus veiksnius ir remiantis jø reikðmingumu iðsiaiðkinsime ar juos verta átraukti á mûsø galutiná modelá ar ne.
+\begin{figure}[H]
+  \caption{Regresinis modelis.}
+  \centering
+    \includegraphics[width=0.8\textwidth, height=0.7\textwidth]{mod1.pdf}
+\end{figure}
+
+\hspace*{0,52cm}Kaip matome ið septinto paveikslo, modelyje yra keletas nereikðmingø kintamøjø. Juos reikia paðalinti ið modelio. Pirmiausia paðalinsime namà laikanèiøjø konstrukcijø grupes. Kadangi vistiek liko nereikðmingø kintamøjø, tai dar tenka paðalinti namø tipø ir baldø grupes, namø sklypo plotà.\\
+\hspace*{0,52cm}Aðtuntajame paveiksle galime pamatyti, kad visi kintamieji yra reikðmingi. Ðio modelio determinacijos koeficientas yra 0,576. Tai reiðkia, kad vieno kvadratinio metro namø kainà lemiantys veiksniai paaiðkina 58 procentus vieno kvadratinio metro namø kainø kintamumà. Reikia patikrinti ar ðio modelio liekanos yra normaliosios. Jeigu jos yra normaliosios, tai ðá modelá galëtume laikyti geriausiu ið mûsø visø sudarytø modeliø.
+\begin{figure}[H]
+  \caption{Regresinis modelis.}
+  \centering
+    \includegraphics[width=0.8\textwidth, height=0.7\textwidth]{mod2.pdf}
+\end{figure}
+
+\hspace*{0,52cm}Kaip matome ið devinto paveikslo, modelio liekanos yra normaliosios, todël paskutiná mûsø sudarytà modelá galime laikyti geriausiu.
+\begin{figure}[H]
+  \caption{Histograma.}
+  \centering
+    \includegraphics[width=0.8\textwidth, height=0.8\textwidth]{hist2.pdf}
+\end{figure}
+
+\subsection{Geriausio modelio analizë}
+\hspace*{0,52cm}Teigiami koeficientø þenklai prie namo vietos arba fizinës bûklës grupiø parodo, kad kuo namai priklauso didesnei vietos ar fizinës bûklës grupei, tuo namø vidutinë kvadratinio metro kaina yra aukðtesnë. Mûsø atveju, pavyzdþiui, jei namas patenka i ketvirtàjà grupæ, tai vidutinë vieno kvadratinio metro kaina padidëja 0,79 procento. Kaip matome ið 8 paveikslo, jei namas priklauso sodø bendrijai arba yra nenaujos statybos, tai jo kvadratinio metro kaina bus maþesnë nei namo, nepriklausanèio sodams arba naujos statybos namo. Taip pat kuo labiau namas bus nutolæs nuo Vilniaus miesto centro, tuo jo vidutinë vieno kvadratinio metro kaina bus maþesnë. 
+
+\newpage
+\section{Iðvados}
+
+\newpage
+\renewcommand{\refname}{\section{Literatûra}}
+\begin{thebibliography}{3}
+\bibitem{Erdos01} D. Asteriou, \emph{Applied Econometrics}, Palgrave Macmillan, China, 2006, pp. 25--56.
+\bibitem{ConcreteMath}MathWorks, \emph{kmeans}, \url{http://www.mathworks.se}
+\bibitem{Knuth92} D.E. Knuth, \emph{Two notes on notation}, Amer.
+Math. Monthly \textbf{99} (1992), 403--422.
+\end{thebibliography}
+
+\end{document}
