@@ -1,0 +1,372 @@
+\documentclass[a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[L7x]{fontenc}
+\usepackage[lithuanian]{babel}
+\usepackage{amsmath}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+%\usepackage{array}
+\textwidth = 425pt
+
+\begin{document}
+\begin{titlepage}
+
+\centerline{\bf \large VILNIAUS UNIVERSITETAS}
+\bigskip
+\centerline{\large MATEMATIKOS IR INFORMATIKOS FAKULTETAS}
+\vskip 120pt
+\vskip 50pt
+\centerline{\Large Kursinis darbas}
+\begin{center}
+    {\bf \huge Nekilnojamo turto rinkos duomenų analizė\\
+    \smallskip  
+    \smallskip}
+\end{center}
+\bigskip
+\vskip 120pt
+\raggedleft
+{\large\textbf{Dovilė Esmantaitė}\\Ekonometrija III kursas 2 grupė\\ \textbf{Birutė Žabinskaitė}\\Ekonometrija III kursas 1 grupė}
+\vskip 30pt
+\raggedright
+{\large Kursinio darbo vadovas: lekt.\textbf{V. Maniušis}\\}
+{\large Vadovo parašas\underline{\hskip 70pt}\\}
+{\large Darbo įteikimo data\underline{\hskip 70pt}\\}
+\vskip 50pt
+\centerline{\large VILNIUS 2011}
+\end{titlepage}
+%\thispagestyle{empty}
+%\thispagestyle{empty}
+\newpage
+%\pagestyle{plain}
+
+\tableofcontents
+\newpage
+\section{Įvadas}
+\hspace*{0,52cm}Pagal funkcinę paskirtį nekilnojamasis turtas gali būti išskiriamas į dvi stambias kategorijas: gyvenamąjį ir komercinį. Šiame darbe nagrinėsime vieną iš gyvenamąjį nekilnojamąjį turtą sudarančių dalių -- namus.\\
+\hspace*{0,52cm}Pirminis šio darbo tikslas yra ištirti kokie veiksniai daro įtaką namų kainoms Vilniaus mieste. Siekiant atlikti šią analizę, bus naudojami duomenys, surinkti iš internetinių skelbimų portalų.\\
+\hspace*{0,52cm}Pagrindinis šio kursinio darbo tikslas -- ištirti kokią itaką namų kainoms turi ją veikiantys veiksniai.\\
+\hspace*{0,52cm}Pirmoje darbo dalyje atliksime aprašomąją duomenų analizę, antroje -- kursime regresinius modelius, kurių pagalba išsiaiškinsime kaip namų kainas veikia tirti veiksniai.
+\newpage
+
+\section{Duomenų aprašomoji statistika}
+\subsection{K-Means metodas duomenų grupavimui}
+\hspace*{0,52cm}Šio kursinio darbo atlikimui duomenys buvo renkami iš internetinių svetainių : www.skelbiu.lt, www.aruodas.lt. Juos sudaro 27 Vilniaus miesto rajonai, t.y. 364 namų aprašų ir tai yra 4368 įvairių reikšmių. Kad galėtume atlikti regresinę analizę, kainą įtakojančius veiksnius reikėjo sugrupuoti, suskirstyti į tam tikras grupes, kad šiek tiek susiaurintume savo turimų duomenų aibę. Duomenų grupavimui, skirstymui į grupes naudojome K-Means metodą.\\
+\hspace*{0,52cm}K-Means -- vienas iš reprezentatyviausių klasterizavimo algoritmų. Klasterizavimas -- tai viena iš duomenų gavybos sričių. Klasterizavimo algoritmo užduotis -- objektų suskirstymas į prasmingas grupes -- klasterius, kai jokia papildoma informacija apie tas grupes (jų dydį, kiekį, grupavimo požymius) nėra iš anksto žinoma. Klasterizavimo algoritmas pats, pagal pasirinktus algoritmo parametrus, turi nurodyti, kokioms grupėms priklauso atitinkami įvesties duomenys.\\
+\hspace*{0,52cm}K-Means pagrindinis parametras yra klasterių skaičius k. Algoritmas prasideda pirmiausia pasirenkant (atsitiktinai) klasterių centrus. Tada kiekvienam centrui yra priskiriami jam artimiausi taškai ir perskaičiuojami nauji centrai. Toliau algoritmas kartojamas iteraciškai tol, kol klasterių centrai stabilizuojasi arba kol pasiekiamas maksimalus iteracijų skaičius. K-Means klasterizavimo algoritmas siekia minimizuoti klaidos funkciją:\\
+\begin{equation}
+E_K=\sum_{k}\parallel x_k-m_{c(x_k)}\parallel ^{2} 
+\end{equation}
+čia K -- klasterių skaičius, $x_k$ -- įvesties duomuo, kuris priskirtas $m_c$ klasteriui.
+
+\subsection{Duomenų grupavimas}
+\hspace*{0,52cm}\textbf{Namų grupavimas pagal namo vietą.}
+Vilniaus miesto rajonus suskirstėme i keturias grupes, naudodami K-Means metodą. Į ketvirtąją namų vietos grupę įeina šios Vilniaus miesto teritorijos: Senamiestis, Užupis, Valakampiai, Žvėrynas, Šnipiškės. Trečią grupę sudaro: Verkiai, Baltupiai, Žirmūnai, Kalnėnai, Santariškės, Visoriai. Antroje grupėje yra: Pilaitė, Bajorai, Pavilnys, Žemieji Paneriai, Grigiškės, Antakalnis, Tarandė, Zujūnai. Pirmą grupę sudaro: Dvarčionys, Aukštieji Paneriai, Balsiai, Naujoji Vilnia, Pagiriai, Salininkai, Vilkpėdė, Trakų Vokė.\\
+\begin{table}[H]
+\emph{\caption{Namų grupavimas pagal namo vietą}}
+\begin{center}
+    \begin{tabular}{ | p{9cm} | l | l |}
+    \hline
+    \textbf{Namo vieta} & \textbf{Grupė} \\ \hline
+    Senamiestis, Užupis, Valakampiai, Žvėrynas, Šnipiškės & 4 \\ \hline
+    Verkiai, Baltupiai, Žirmūnai, Kalnėnai, Santariškės, Visoriai & 3 \\ \hline
+    Pilaitė, Bajorai, Pavilnys, Žemieji Paneriai, Grigiškės, Antakalnis, Tarandė, Zujūnai & 2 \\ \hline
+    Dvarčionys, Aukštieji Paneriai, Balsiai, Naujoji Vilnia, Pagiriai, Salininkai, Vilkpėdė, Trakų Vokė & 1 \\ \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+\hspace*{0,01cm}\textbf{Namų grupavimas pagal jų fizinę būklę.} Pirmą grupę sudaro namai, kurie yra neįrengti; antrą -- įrengti ir nepilnai įrengti namai, kuriems reikia remonto; trečią -- pilnai įrengti namai ir jiems nereikia remonto; ketvirtą -- prabangiai įrengti namai.
+\begin{table}[H]
+\emph{\caption{Namų grupavimas pagal jų fizinę būklę}}
+\begin{center}
+    \begin{tabular}{| l | l | l |}
+    \hline
+    \textbf{Būklė} & \textbf{Grupė} \\ \hline
+    Prabangiai įrengtas &4   \\ \hline
+    Įrengtas, nereikia remonto & 3 \\ \hline
+    Įrengtas, reikia remonto & 2 \\  \hline
+    Neįrengtas & 1 \\
+    \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+\hspace*{0,01cm}\textbf{Namų skirstymas pagal laikančiąsias konstrukcijas.}
+ Medinius namus žymėsime nuliu, mūrinius namus -- vienetu.
+ \begin{table}[H]
+\emph{\caption{Namų skirstymas pagal laikančiąsias konstrukcijas}}
+\begin{center}
+    \begin{tabular}{ | l | l | l |}
+    \hline
+   \textbf{ Laikančiųjų konstrukcijų rūšys} & \textbf{Žymėjimas} \\ \hline
+    Mūrinės & 1 \\ \hline
+    Medinės & 0 \\ 
+    \hline
+    \end{tabular}
+\end{center}
+\end{table}
+
+\hspace*{0,01cm}Namai buvo suskirstyti pagal namų tipus. Išskyrėme du: namas ir kotedžas. Namus žymėsime vienetu, kotedžus -- nuliu. Taip pat namai buvo suskirstyti pagal tai, ar jie priklauso sodų bendrijoms. Jei priklauso -- 1, jei ne -- 0. Buvo surinkti duomenys ar namas/kotedžas parduodamas su baldais. Jei namas su baldais -- 1, jei be -- 0. Namų statybos metai buvo suskirstyti į dvi grupes, naudojant K-Means metodą, t.y. jei namas statytas 2000 metais ir vėliau, tai jis pažymimas 1, jei namas statytas anksčiau -- 0.  
+
+\subsection{Duomenų analizė}
+\hspace*{0,52cm}Nagrinėjome vieno kvadratinio metro namų kainų Vilniuje pagrindinius statistinius rodiklius. Šių duomenų vidurkis, t.y. vidutinė vieno kvadratinio metro namo kaina yra 3698 Lt, o standartinis nuokrypis 2210 Lt. Galime teigti, kad kainos gana plačiai pasiskirsčiusios apie vidurkį. Didžiausia vieno kvadratinio metro namo kaina yra 18041 Lt, mažiausia -- 1018 Lt. Šių duomenų mediana -- 3146 Lt
+\begin{table}[H]
+\emph{\caption{Pagrindiniai namų vieno kvadr.m. statistiniai rodikliai }}
+\begin{center}
+    \begin{tabular}{| l | l | l |}
+    \hline
+    Duomenų skaičius & 364 \\ \hline
+    Aritmetinis vidurkis & 3698 Lt \\ \hline
+    Standartinis nuokrypis & 2418 Lt \\ \hline
+    Minimumas & 1018 Lt\\ \hline
+    Maksimumas & 18041 Lt\\ \hline
+    Mediana&3146 Lt  \\ 
+    \hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\hspace*{0,52cm}Toliau nagrinėjome kainos priklausomybę nuo ją veikiančių veiksnių. Pirmajame paveiksle matome išbrėžtas kainos ir vieno kvadratinio metro kainos histogramas. Jose galime pastebėti, kad namų kainos pasiskirsčiusios gana plačiai. Taip pat pastebime, kad yra kainų, kurios smarkiai skiriasi nuo kitų kainų. Tikriausiai susidursime su išskirtimis.
+\begin{figure}[H]
+  \caption{Histogramos.}
+  \centering
+    \includegraphics[width=0.5\textwidth, height=0.5\textwidth]{4a.pdf}
+\end{figure}
+
+\hspace*{0,52cm}Antrajame paveiksle matome stačiakampę diagramą, kuri vaizduoja vieno kvadratinio metro namų kainas pagal išskirtas keturias namo vietos grupes, skaitines charakteristikas. Plačiau panagrinėsime tik ketvirtą grupę. Iš pateikto grafiko matome, kad didžiausia šios grupės vieno kvadratinio metro kaina yra 13529 Lt, mažiausia -- 3980 Lt. Taip pat galime pamatyti, kad mediana yra 8861 Lt, t.y. reikšmė, kuri mūsų imtį padalina į dvi dalis. Apatinis kvartilis yra 7153 Lt (už jo lieka 25 procentai duomenų),  viršutinis -- 10053 Lt (už jo lieka 75 procentai duomenų). Namo priklausymas aukštesnei namo vietos grupei įtakoja didesnę vieno kvadratinio metro kainą.
+\begin{figure}[H] 
+  \caption{Stačiakampė diagrama.}
+  \centering
+    \includegraphics[width=0.5\textwidth, height=0.45\textwidth]{Gr4.pdf}
+\end{figure}
+
+\hspace*{0,52cm}Trečiajame paveiksle matome keturis grafikus. Pirmajame grafike galime pastebėti, kad namų vieno kvadratinio metro kainos yra didesnės, kai namo tipas yra kotedžas. Tai gali sąlygoti, kad beveik visi kotedžai yra naujos statybos. Antrajame grafike matome, kad kainos vis didėja, kai namai priklauso vis aukštesnėms grupėms, suskirstytoms pagal namų fizinę būklę. Taigi, didžiausios vieno kvadratinio metro namo kainos yra ketvirtoje grupėje. Trečiajame grafike galime pastebėti, kad namų vieno kvadratinio metro kainos yra didesnės, kai namus laikančiosios konstrukcijos rūšis yra medis. Nagrinėjant namo kainos priklausomybę nuo namą laikančiųjų konstrukcijų gauname, kad namai yra brangesni, kai jie pastatyti iš mūro. Visa tai galima paaiškinti tuo, kad mediniai namai yra pigesni, nei mūriniai namai, tačiau jų namo plotas mažesnis ir kai kurie mediniai namai priklauso centriniams Vilniaus miesto rajonams, todėl nagrinėjant vieno kvadratinio metro kainą gauname, kad mediniai namai yra brangesni. Ketvirtajame grafike matome, kad vieno kvadratinio metro namų kainos mažai priklauso nuo to ar namas yra naujos ar nenaujos statybos.
+\begin{figure}[H]
+  \caption{Stačiakampės diagramos.}
+  \centering
+    \includegraphics[width=0.5\textwidth, height=0.5\textwidth]{2a.pdf}
+\end{figure}
+
+\hspace*{0,52cm}Ketvirtajame paveiksle vėl matome keturis grafikus. Pirmajame grafike galime pastebėti, kad vieno kvadratinio metro namų kainos yra didesnės, kai namai nepriklauso sodų bendrijoms. Antrajame grafike matome, kad vieno kvadratinio metro namų kainos yra šiek tiek aukštesnės, kai namas yra parduodamas su baldais. Trečiajame grafike galime įžvelgti, kad vieno kvadratinio metro namų kainos labai priklauso nuo atstumo iki centro, t.y. kuo namai toliau nuo centro, tuo labiau namų kainos mažėja. Ketvirtajame grafike matome vieno kvadratinio metro namų kainų priklausomybę nuo pastatymo metų. Šiame grafike sunku įžvelgti kažkokia priklausomę, tiesiog matome, kad beveik visi duomenys priklauso intervalui nuo 1940m. iki 2011m.
+\begin{figure}[H]
+  \caption{Stačiakampės diagramos.}
+  \centering
+    \includegraphics[width=0.5\textwidth, height=0.5\textwidth]{3a.pdf}
+\end{figure}
+
+\hspace*{0,01cm}Toliau nagrinėjome ryšius tarp namų kainų ir kainas įtakojančių veiksnių, taip pat ryšius tarp pačių kainas įtakojančių veiksnių. Koreliacija -- tai kintamųjų tiesinės priklausomybės matas. Spirmeno ranginės koreliacijos koeficientas matuoja tiesinę ranginių kintamųjų priklausomybę. Rangavimas atliekamas atskirai X, ir atskirai Y, t.y. $R_{xi}$ yra $x_i$ rangas, o $R_{yi}$ -- $y_i$ rangas.
+\begin{equation}
+r_s=\frac{\sum_{i=1}^{n}(R_{xi}-\frac{n+1}{2})(R_{yi}-\frac{n+1}{2})}{\sqrt{\sum_{i=1}^{n}(R_{xi}-\frac{n+1}{2})^2}\sqrt{\sum_{i=1}^{n}(R_{yi}-\frac{n+1}{2})^2}}.
+\end{equation}
+Pirsono koreliacijos koeficientas įvertina kiekybinių kintamųjų tiesinio ryšio stiprumą. Jis apskaičiuojamas taip:
+\begin{equation}
+r=\frac{\frac{1}{n-1}\sum_{i=1}^{n}(x_i-\overline{x})(y_i-\overline{y})}{s_x s_y},
+\end{equation}
+čia n -- stebėjimų skaičius, $s_x$ ir $s_y$ yra atsitiktinių dydžių X ir Y standartiniai nuokrypiai.\\
+\hspace*{0,52cm}Koreliacijos koeficientas tarp namų kainų ir namų vietų yra 0,664. Tai reiškia, kad ryšys yra stiprus. Koreliacijos koeficiento ženklas taip pat informatyvus. Teigiamas ženklas parodo, kad koreliacija -- teigiama, o tai reiškia, kad didėjančios namų kainos atitinka vis geresnę nekilnojamo turto vietos grupę. Koreliacijos koeficientas tarp namų kainų ir namų fizinės būklės yra 0,463, t.y. vidutiniškas ryšys. Koreliacijos koeficientas tarp namų kainų ir atstumo iki Vilniaus miesto centro yra -- -0,379. Tai irgi vidutiniškas ryšys. Neigiamas ženklas parodo, kad koreliacija -- neigiama, o tai reiškia, kad namų kainoms didėjant atstumas mažėja. Kitos kintamųjų koreliacijų reikšmės yra pateiktos 5 lentelėje. Joje galima pastebėti, kad kai kurie kintamieji tarpusavyje koreliuoja, todėl, kuriant modelį, reikės tirti ar nesusiduriame su multikolinearumo problema.\\
+\begin{table}[H]
+\emph{\caption{Koreliacijos tarp kintamųjų}}
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+    \hline
+           & Kaina&Gr&Sodai&Ireng&Stat&Mur&Np&Sp&Ats&Baldai&Tipas\\ \hline
+   Kamb & 0,320 & 0,124 & -0,130 & 0,063 & -0,065 & 0,139 & 0,619 & 0,092 & -0,048 & -0,039 & 0,083 \\ 
+   Tipas & -0,052 & -0,183 & 0,192 & 0,108 & 0,037 & -0,082 & 0,119 & 0,496 & 0,230 & 0,007 \\ 
+   Baldai & 0,137 & 0,027 & 0,112 & 0,007 & -0,173 & -0,020 & 0,048 & 0,001 & -0,075 \\ 
+   Ats & -0,379  & -0,649 & 0,068 & -0,075 & 0,175 & 0,040 & -0,034 & 0,289 \\ 
+   Sp & 0,105  & -0,310 & -0,069 & 0,001 & 0,065 & -0,026 & 0,308\\ 
+   Np &  0,472 & 0,134 & -0,222 & 0,048 & 0,019 & 0,236\\ 
+   Mur & 0,199 & 0,048 & -0,008 & -0,020 & 0,156\\ 
+   Stat &  0,045 & -0,087 & 0,037 & -0,173\\ 
+   Ireng & 0,463 & 0,178 & 0,102\\ 
+   Sodai & -0,261 & -0,128\\ 
+   Gr  & 0,664\\  
+\end{tabular}
+\end{center}
+\end{table}
+
+
+
+
+\hspace*{0,52cm}Išnagrinėję duomenis, esame pasiruošę atlikti ekonometrinę analizę.
+
+\section{Ekonometrinė analizė}
+\subsection{Išskirtys}
+\hspace*{0,52cm}Kad galėtume pradėti ekonometrinę analizę, reikia turėti duomenis, pasiskirsčiusius pagal normalųjį skirstinį. Aišku, kad dabar turimi duomenys netenkina normalumo sąlygos. Bandėme transformuoti duomenis (log-tiesinis, log-log ir kt.variantai), nagrinėjant namo kainas ir vieno kvadratinio metro kainas, tačiau histogramos ir Jarque-Berra testas, skirtas duomenų normalumui tikrinti, signalizavo, kad duomenys nėra normalus. Susidūrėme su išskirčių problema.\\
+\hspace*{0,52cm}Išskirtis -- tai tokia kintamojo reikšmė, kuri stipriai skiriasi nuo kitų stebėjimų. Modelis, sudarytas duomenims su išskirtimis, nėra patikimas. Kadangi, mes susidūrėme su išskirčių problema ir norime, kad modelis būtų patikimas, kiekvieną duomenį nagrinėjome atskirai. Taip peržiūrint duomenis pastebėjome, kad susidūrėme su namų kainų pervertinimu. Dažniausiai tai lietė visiškai neįrengtus namus, kurių kainos, lyginant su tame pačiame rajone esančiais neįrengtais namais ir dar palyginimui su kituose rajonuose esančiais namais, buvo gerokai didesnės. Kainos skyrėsi keliomis dešimtimis tūkstančių. Taip pat pastebėjome, kad iškeltų kainų problema liečia įrengtus ir labai prabangiai įrengtus namus. Palyginus namus, esančius tame pačiame arba labai panašiame Vilniaus miesto rajone, pamatėme, kad namai, kurių namo plotas, įrentumas, namo tipas ir kiti kriterijai beveik sutampa, namo kainos skiriasi net vienu milijonu litų. Atlikus tokią kiekvieno duomens analizę, nusprendėme pašalinti duomenis, kurie buvo susiję su kainų pervertinimu. Penktoje lentelėje pateikėme pavyzdį (šiam pavyzdžiui nagrinėjami tik trys namų aprašai), kuo remiantis buvo šalinamos išskirtys (jas pažymėjome *). Kaip matome iš tos lentelės, beveik visi namų aprašų kriterijai sutampa, tačiau skiriasi tik namo plotas, sklypo plotas, atstumas iki centro ir kambarių skaičius. Į kambarių skaičiaus ir atstumo skirtumus galime nekreipti dėmesio, kadangi vieno namo kambarys nelygus kito namo kambariui, o  atstumai skiriasi tik 1-2 kilometrais. Toliau, lygindami tik namų ir sklypų plotus, pamatome, kad namų, pažymėtų žvaigždutėmis, kainos yra pervertintos. Namas, nepažymėtas žvaigždute, yra tik vienas namo aprašas iš daugelio su kuriais buvo lyginami žvaigždutėmis pažymėti namai. Namų kainos gali būti pervertintos dėl daugelio dalykų, t.y. nekilnojamo turto brokerių įtaka, pelno siekimas, neatsižvelgimas į nekilnomajo turto rinkos kainas.
+\begin{table}[H]
+\emph{\caption{Kainų pervertinimo pavyzdžiai }}
+\begin{center}
+    \begin{tabular}{| l | l | l | l | l | l | l | l | l | l | l | l | l |}
+    \hline
+    Kaina & Gr& Ireng&Kamb&Tipas&Sodai&Mur&Np&Sp&Stat&Baldai&Atst\\ \hline
+    6999999*&3&4&7&Namas&0&1&388&30&1&1&9,1 \\ \hline
+    4999999*&3&4&6&Namas&0&1&370&3&1&1&10,6  \\ \hline
+    2400000&3&4&5&Namas&0&1&301&18&1&1&8,2\\ 
+    \hline
+\end{tabular}
+\end{center}
+\end{table}
+čia $Gr$ -- namų grupavimas pagal namo vietą, $Ireng$ -- namų grupavimas pagal jų fizinę būklę, $Kamb$ -- kambarių skaičius,  $Tipas$ -- namas arba kotedžas, $Sodai$ -- namo priklausymas sodų bendrijai, $Mur$ -- laikančiųjų konstrukcijų rūšis, $Np$ -- namo plotas, $Sp$ -- sklypo plotas, $Stat$ -- statybos laikotarpis, $Baldai$ -- namas su baldais ar ne, $Atst$ -- namo atstumas iki centro (km).
+
+\subsection{Duomenų normalumas}
+\hspace*{0,52cm}Pašalinus pastebėtas ir kruopščiai atrinktas išskirtis, tikrinome duomenų normalumą. Atliekant įvairias transformacijas (log-tiesinis, log-log ir kt. variantai) ir nagrinėjant namų kainas, namų vieno kvadratinio metro kainas, duomenų normalumas yra tenkinamas tik nagrinėjant logaritmuotas namų kainas. Tai matome iš logaritmuotų kainų histogramos. Šį faktą patvirtina ir Jarque -- Bera testas. Kadangi 0,202 > 0,05, tai nulinę hipotezę, kad duomenys yra pasiskirstę pagal normalųjį dėsnį, priimame.
+\begin{table}[H]
+\emph{\caption{Jarque -- Bera testas}}
+\begin{center}
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Kintamasis } & \textbf{p -- reikšmė} \\ \hline
+   log(Kaina) & 0,202   \\ \hline
+ \end{tabular}
+\end{center}
+\end{table}
+
+\subsection{Modelio paieška}
+\hspace*{0,52cm}Dabar bandysime kurti modelius, kurių pagalba išsiaiškinsime kaip namų kainos priklauso nuo namų kainą lemiančių veiksnių. Visų pirma, į modelį įtrauksime visus mūsų turimus veiksnius ir remiantis jų reikšmingumu išsiaiškinsime ar juos verta įtraukti į mūsų galutinį modelį ar ne. Mūsų pradinis modelis atrodo taip:
+\begin{align*}
+log(Kaina)&=C+\beta_1\cdot Gr2+\beta_2\cdot Gr3+\beta_3\cdot Gr4 +\beta_4\cdot Sodai+\beta_5\cdot Ireng2 +\beta_6\cdot Ireng3 \\
+&+\beta_7\cdot Ireng4+\beta_8\cdot Statyba+\beta_9\cdot Mur+\beta_{10}\cdot log(Nplotas)+\beta_{11}\cdot log(Splotas)\\
+&+\beta_{12} \cdot log(Atstumas) +\beta_{13}\cdot Baldai+\beta_{14} \cdot Tipas+\beta_{15}\cdot log(Kamb);
+\end{align*}
+čia $Gr_i$ -- namų grupavimas pagal namo vietą, $Ireng_i$ -- namų grupavimas pagal jų fizinę būklę, $Stat$ -- statybos laikotarpis, $Mur$ -- laikančiųjų konstrukcijų rūšis, $Nplotas$ -- namo plotas, $Splotas$ -- sklypo plotas, $Sodai$ -- namo priklausymas sodų bendrijai, $Atstumas$ -- namo atstumas iki centro (km), $Baldai$ -- namas su baldais ar ne, $Tipas$ -- namas arba kotedžas, $Kamb$ -- kambarių skaičius, $e$ -- liekamoji paklaida.\\
+\begin{table}[H]
+\emph{\caption{Pradinio modelio kintamųjų koeficientų reikšmės}}
+\begin{center}
+    \begin{tabular}{|c|c|c| }
+    \hline
+    \textbf{Kintamasis } & \textbf{Koeficiento reikšmė}&\textbf{Reikšmingumas}\\ \hline
+    Gr2 & 0,189 & 0,000***   \\ \hline
+    Gr3 & 0,545& 0,000*** \\ \hline
+    Gr4 & 0,819& 0,000*** \\  \hline
+    Sodai & -0,179& 0,000*** \\   \hline
+    Ireng2 & 0,225& 0,000* \\   \hline
+    Ireng3 & 0,391& 0,000*** \\   \hline
+Ireng4 & 0,661& 0,000*** \\   \hline
+Stat & 0,342 & 0,000*** \\   \hline
+Mur & 0,169 & 0,009** \\   \hline
+log(Nplotas) & 0,468 & 0,000*** \\   \hline
+log(Splotas) & 0,083& 0,005** \\   \hline
+log(Atstumas) & -0,174 & 0,001*** \\   \hline
+Baldai & 0,011 & 0,771 \\   \hline
+Tipas & -0,063 & 0,110 \\   \hline
+log(Kamb) & 0,191 & 0,022* \\   \hline
+\end{tabular}
+\end{center}
+\end{table}
+\hspace*{0,52cm}Kaip matome iš aštuntos lentelės, koeficientų ženklai tokie pat, kaip ir turėjo būti, sprendžiant pagal koreliacijas, tačiau, reikia atsižvelgti į tai, kad kai kurie kintamieji tarpusavyje koreliuoja. Matome, kad kintamieji $Gr_i$, $Ireng_i$, $Sodai$, $Stat$, $Mur$, $log(Nplotas)$, $log(Splotas)$, $ log(Atstumas)$, $log(Kamb)$ yra statistiškai reikšmingi, o kintamieji $ Baldai$, $Tipas$ yra statistiškai nereikšmingi. Išsiaiškinome, naudojantis Jarque-Berra testu, kad šio modelio liekanos nėra normaliosios. Modelio determinacijos koeficientas ($R^2$) yra 0,773. Taigi, galutinė šio pradinio modelio išvada, kad, nors determinacijos koeficientas yra pakankamai didelis, tačiau yra nereikšmingų ir multikolinearių kintamųjų, todėl modelį reikia tobulinti. \\
+\hspace*{0,52cm}Modelio tobulinimas dažniausiai reiškia nereikšmingų kintamųjų šalinimą. Tačiau mūsų nagrinėjamas modelis dar susiduria su kintamų tarpusavio koreliacija. Taigi, iš modelio, dėl koreliacijos tenka pašalinti $log(Atstumas)$ ir$log(Kamb)$ kintamuosius. Toliau pašaliname likusius nereikšmingus kintamuosius. Po visų atliktų procedūrų, mūsų modelis atrodo taip:\begin{align*}
+log(Kaina)&=C+\beta_1\cdot Gr2+\beta_2\cdot Gr3+\beta_3\cdot Gr4 +\beta_4\cdot Sodai+\beta_5\cdot Ireng2 +\beta_6\cdot Ireng3 \\
+&+\beta_7\cdot Ireng4+\beta_8\cdot Stat+\beta_{9}\cdot Mur+\beta_{10}\cdot log(Nplotas)
+\end{align*}
+\begin{table}[H]
+\emph{\caption{Modelio kintamųjų koeficientų reikšmės}}
+\begin{center}
+    \begin{tabular}{|c|c|c| }
+    \hline
+    \textbf{Kintamasis } & \textbf{Koeficiento reikšmė} & {Reikšmingumas} \\ \hline
+    Gr2 & 0,234 & 0,000***   \\ \hline
+    Gr3 & 0,618 & 0,000*** \\ \hline
+    Gr4 & 1,029 & 0,000*** \\  \hline
+    Sodai & -0,188 & 0,000*** \\   \hline
+    Ireng2 & 0,239 & 0,0194* \\   \hline
+    Ireng3 & 0,399 & 0,000*** \\   \hline
+    Ireng4 & 0,674 & 0,000*** \\   \hline
+    Statyba & 0,321 & 0,000*** \\   \hline
+    Mur & 0,137 & 0,037* \\   \hline
+    log(Nplotas) & 0,572 & 0,000*** \\   \hline
+\end{tabular}
+\end{center}
+\end{table}
+\hspace*{0,52cm}Kaip matome iš devintos lentelės, visi šio modelio kintamieji yra reikšmingi. Jarque -- Bera testas priima nulinę hipotezę, kad modelio paklaidos yra normaliosios.
+\begin{table}[H]
+\emph{\caption{Jarque -- Bera testas}}
+\begin{center}
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Kintamasis } & \textbf{p -- reikšmė} \\ \hline
+    Modelio liekanos & 0,116   \\ \hline
+ \end{tabular}
+\end{center}
+\end{table}
+\hspace*{0,52cm}Kad modelio paklaidos yra normaliosios, įsitikaname ir išbrėžę modelio paklaidų histogramą.
+\begin{figure}[H]
+  \caption{Modelio liekanų histograma.}
+  \centering
+    \includegraphics[width=0.5\textwidth, height=0.5\textwidth]{histmod.pdf}
+\end{figure}
+
+\hspace*{0,52cm}Pažiūrėsime ar nebeliko multikolinearumo problemos. Dispersijos mažėjimo daugiklis (VIF) parodo ar regresoriai stipriai tarpusavyje koreliuoja (yra multikolinearumo problema). VIF skaičiuojamas kiekvienam regresoriui. Multikolinearumas yra, kai VIF > 4. Taigi, VIF apskaičiuojame kiekvienam kintamajam.
+\begin{table}[H]
+\emph{\caption{Dispersijos mažėjimo daugiklių reikšmės}}
+\begin{center}
+    \begin{tabular}{|c|c|}
+    \hline
+    \textbf{Kintamasis } & \textbf{VIF} \\ \hline
+   Gr2 & 1,149   \\ \hline
+   Gr3 & 1,108  \\ \hline
+   Gr4 & 1,206  \\ \hline
+   Sodai & 1,118  \\ \hline
+   Ireng2 & 1,434  \\ \hline
+   Ireng3 & 1,457  \\ \hline
+   Ireng4 & 1,133  \\ \hline
+   Stat & 1,292  \\ \hline
+   Mur & 1,177  \\ \hline
+   log(Nplotas) & 1,275  \\ \hline
+ \end{tabular}
+\end{center}
+\end{table}
+
+\hspace*{0,52cm} Kaip matome iš vienuoliktos lentelės, visų kintamųjų dispersijos mažėjimo daugiklių reikšmės yra mažesnės už 4, tai likę regresoriai silpnai koreliuoja tarpusavyje, multikolinearumo problemos nebeliko. Determinacijos koeficientas R$^2$=0,757, t.y. modelio regresoriai paaiškina 76\% namo kainos reikšmės.\\
+\hspace*{0,52cm}Šį modelį galime laikyti geriausiu, mūsų duomenis aprašančiu, modeliu.\\
+\hspace*{0,52cm}Paskaičiavome, kokia yra vidutinė procentinė absoliutinė mūsų modelio paklaida. Vidutinė procentinė absoliutinė paklaida apskaičiuojama taip:
+\begin{equation}
+MAPE=\frac{100}{n}\sum_{i=1}^{n}\frac{\mid e_i\mid}{y_i}
+\end{equation}
+čia $e_i$ -- i-oji liekamoji paklaida; $y_i$ -- i-asis priklausomas kintamasis.\\ \\
+\hspace*{0,52cm}Vidutinė procentinė absoliutinė paklaida nusako santykinį prognozavimo tikslumą ir, juo remiantis, galima palyginti skirtingų rodiklių prognozes.
+\begin{table}[H]
+\emph{\caption{Prognozavimo tikslumo nustatymas}}
+\begin{center}
+    \begin{tabular}{|c|c| }
+    \hline
+    \textbf{MAPE, procentais } & \textbf{Prognozavimo tikslumas} \\ \hline
+    <10 & Labai tikslus   \\ \hline
+    [10, 20) & Tikslus \\ \hline
+    [20, 50) & Pakankamas \\  \hline
+    >50 & Nepakankamas \\   \hline
+    \end{tabular}
+\end{center}
+\end{table}
+\hspace*{0,52cm}Mūsų modelio MAPE=1,482. Tai reiškia, kad mūsų modelio atliekama prognozė yra labai tiksli.
+
+\subsection{Geriausio modelio interpretacija}
+\hspace*{0,52cm}Geriausiai, mūsų duomenis aprašantis modelis, atrodo taip:
+\begin{align*}
+log(Kaina)&=9,534+0,234\cdot Gr2+0,618\cdot Gr3+1,029\cdot Gr4 -0,188\cdot Sodai+0,239\cdot Ireng2\\
+&+0,399\cdot Ireng3+0,674\cdot Ireng4+0,321\cdot Stat+0,137\cdot Mur+0,572\cdot log(Nplotas)
+\end{align*}
+\hspace*{0,52cm}Teigiami koeficientų ženklai prie namo vietos arba fizinės būklės grupių parodo, kad kuo namai priklauso didesnei vietos ar fizinės būklės grupei, tuo namų kaina yra aukštesnė. Mūsų atveju, pavyzdžiui, jei namas patenka į ketvirtąją grupę, tai vidutinė kaina padidėja 102,9 procentais. Priešingai, jei namas priklauso sodų bendrijai, tai jo vidutinė kaina sumažėja18,8 procentais. 
+Jeigu namas yra naujos statybos, tai vidutinė namo kaina padidėja 32,1 procentais, o jei jis mūrinis, tai vidutinė kaina padidėja 13,7 procentais. Namo plotui padidėjus vienu procentu, namo kaina padidėja 0,572 procentais. Laisvasis narys parodo kokia būtų namo kaina, jei namas priklausytų pirmoms namo vietos ir fizinės būklės grupėms, nepriklausytų sodo bendrijai, būtų senos statybos ir nemūrinis namas. \\
+\hspace*{0,52cm}Patikrinome, kaip mūsų modelis "spėja" kainas. Iš internetinio portalo www.aruodas.lt susiradome Vilniuje parduodamo namo skelbimą, įdėtą į portalą 2011m. lapkričio 28d. Tai namas, esantis Verkiuose. Namo plotas yra 130 $m^2$, sklypo plotas 6,92 $m^2$, statytas 1991m. Namas -- mūrinis, yra 4 kambariai, įrengtas, nereikia remonto, parduodamas be baldų, atstumas iki centro 9,1 km. Šis namas parduodamas už 475000 Lt. Taigi, skaičiuojame:
+\begin{align*}
+log(Kaina)&=9,534+0,234\cdot 1+0,618\cdot 0+1,029\cdot 0 -0,188\cdot 0+0,239\cdot 0\\
+&+0,399\cdot 1+0,674\cdot 0+0,321\cdot 0+0,137\cdot 1+0,572\cdot log(130)
+\end{align*}
+$log(Kaina)=13,088$ ir iš to išplaukia, kad mūsų modelio prognozuojama kaina lygi 483110 Lt. Skirtumas tarp prognozuojamos ir tikrosios kainos yra 8110 Lt. Atliktos prognozės paklaida yra 1,7 \%. Matome, kad modelis prognozuoja tiksliai.
+\newpage
+\section{Išvados}
+
+
+
+\newpage
+\renewcommand{\refname}{\section{Literatūra}}
+\begin{thebibliography}{3}
+\bibitem{Erdos01} D. Asteriou, \emph{Applied Econometrics}, Palgrave Macmillan, China, 2006, psl. 25--56.
+%\bibitem{ConcreteMath}MathWorks, \emph{kmeans}, \url{http://www.mathworks.se}
+\bibitem{Knuth92} V. Čekanavičius, \emph{Taikomoji regresinė analizė socialiniuose tyrimuose}, Kaunas  (2011), psl.11--86, \url{http://www.lidata.eu/}
+\end{thebibliography}
+
+\end{document}
