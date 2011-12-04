@@ -1,0 +1,302 @@
+\documentclass[utf8,hyperref={unicode}]{beamer}
+%\documentclass[utf8]{beamer}
+
+\mode<presentation>
+{
+  \usetheme{Berkeley}
+  % \usecolortheme{dove} 
+   \setbeamertemplate{footline}
+   {%
+     \leavevmode%
+    \hbox{\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm 	plus1fill,rightskip=.3cm]{author in head/foot}%
+   % \usebeamerfont{author in head/foot}\insertshortauthor
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1.125ex,leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \usebeamerfont{title in head/foot} \hfill p.
+	\insertpagenumber\enspace iš \insertdocumentendpage\enspace
+    \end{beamercolorbox}}%
+  \vskip0pt%
+}
+}
+ \setbeamertemplate{navigation symbols}{}
+
+\usepackage[english]{babel}
+%\usepackage[utf8x]{inputenc}
+\usepackage[L7x]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{theorem}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+
+\newcommand{\ab}[1]{#1_{\alpha}}
+\newcommand{\wab}[2][\delta]{w_{\alpha}(#2,#1)}
+\newcommand{\normab}[1]{\lVert#1\rVert_{\alpha}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\sprod}[1]{\langle #1 \rangle}
+\DeclareMathOperator{\diam}{diam}
+%\renewcommand{\theenumi}{\roman{enumi}}
+%\renewcommand{\labelenumi}{\theenumi)}
+\theoremstyle{change}\newtheorem{teorema}{Teiginys}
+\theoremstyle{change}\newtheorem{salyga}{}
+%	\vspace*{20pt}
+%	\vspace*{20pt}
+\DeclareMathOperator{\seq}{seq}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\tr}{tr}
+\newcommand{\ds}[1]{\displaystyle{#1}}
+\newcommand{\dlt}[2]{\Delta^{(#1)}_{#2}}
+\newcommand{\norms}[1]{\lVert#1\rVert_{\alpha}^{\seq}}
+\newcommand{\normh}[1]{\lVert#1\rVert}
+\newcommand{\norma}[1]{\lVert #1\rVert_{\alpha}}
+
+\newcommand{\skirt}[2]{\Delta^{(#1)}_{#2}}
+\newcommand{\cp}{\buildrel P\over\longrightarrow}
+\renewcommand{\theenumi}{\roman{enumi}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbf{E}\,} % expectation operator
+\newcommand{\bv}{\bm{v}}
+
+\newcommand{\T}{T}
+\newcommand{\n}{{\bm{n}}}
+\newcommand{\jj}{{\bm{j}}}
+\newcommand{\kk}{{\bm{k}}}
+\newcommand{\bt}{\bm{t}}
+\newcommand{\bu}{\bm{u}}
+\newcommand{\B}{\bm{B}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\bi}{\bm{i}}
+\newcommand{\p}{\bm{\pi}}
+\newcommand{\one}{{\bm{1}}}
+
+\newcommand{\nni}{{\bm{n},\bm{i}}}
+\newcommand{\nj}{{\bm{n},\bm{j}}}
+\newcommand{\nk}{{\bm{n},\bm{k}}}
+\newcommand{\kn}{\bm{k}_{\bm{n}}}
+
+\newcommand{\vv}{\bm{\mathrm{v}}}
+\newcommand{\vr}{{\mathrm{v}}}
+\newcommand{\uu}{\bm{\mathrm{u}}}
+\newcommand{\ur}{{\mathrm{u}}}
+
+
+\newcommand{\abs}[1]{\left\vert #1 \right\vert}
+\newcommand{\snk}{\sigma^2_{\bm{n},\bm{k}}}
+\newcommand{\snj}{\sigma^2_{\bm{n},\bm{j}}}
+
+\newcommand{\Rnj}{R_{\bm{n},\bm{j}}}
+\newcommand{\Rnk}{R_{\bm{n},\bm{k}}}
+
+\newcommand{\HH}{\mathrm{H}} % a set of notations for Holder spaces
+\newcommand{\Ha}{\HH_{\alpha}}
+\newcommand{\Hab}{\HH_{\alpha,\beta}}
+\newcommand{\Habo}{\HH_{\alpha,\beta}^o}
+\newcommand{\Hao}{\HH_{\alpha}^o}
+\newcommand{\m}{\mathrm{m}}
+\newcommand{\s}{\bm{s}}
+
+\newcommand{\bb}{\bm{\beta}}
+\newcommand{\bx}{\mathbf{x}}
+\newcommand{\indf}[1]{\mathbf{1}\left( #1 \right)}
+
+\title{Nekilnojamo turto rinkos duomenų analizė}
+%\shorttitle{FCRT daugiamačio indekso procesams}
+\author[Dovilė Esmantaitė ir Birutė Žabinskaitė]{Dovilė Esmantaitė ir Birutė Žabinskaitė\\ Ekonometrija III kursas\\ Kursinio darbo vadovas: lekt. V. Maniušis}
+\institute[Vilnius University] {
+    
+    Vilniaus Universitetas
+    \and
+    
+    Matematikos ir informatikos fakultetas
+ }
+\date{2011 gruodžio 8 d.}
+
+\begin{document}
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tikslai} 
+    \begin{itemize} \Large
+	\item{ Ištirti, kokie yra namų kainas veikiantys veiksniai;}
+            \vskip 20pt
+            \item Ištirti, kaip namų kainos priklauso nuo ją veikiančių veiksnių.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Duomenys} 
+    \begin{itemize} \Large
+	\item  Tiriami 12 namų kainas veikiantys veiksniai;
+	\item Duomenys apima 364 namų aprašus, t.y. 4368 įvairias reikšmes;
+	 \item Duomenys grupuojami, norint susiaurinti platų duomenų spektrą.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Duomenų žymėjimas}
+\begin{itemize}
+\item $Gr$ -- namų grupavimas pagal namo vietą;
+\item$Ireng$ -- namų grupavimas pagal jų fizinę būklę;
+\item$Kamb$ -- kambarių skaičius; 
+\item $Tipas$ -- namas arba kotedžas;
+\item$Sodai$ -- namo priklausymas sodų bendrijai; 
+\item$Mur$ -- laikančiųjų konstrukcijų rūšis;
+\item$Nplotas$ -- namo plotas ($m^2$); 
+\item$Splotas$ -- sklypo plotas (a); 
+\item$Stat$ -- statybos laikotarpis; 
+\item$Baldai$ -- namas su baldais ar ne; 
+\item$Atst$ -- namo atstumas iki centro (km).
+\end{itemize}
+\end{frame}
+
+\begin{frame}\large
+    \frametitle{Duomenų grupavimas } 
+     \begin{table}[H]
+        \begin{center}
+        \begin{tabular}{ | p{8cm} | l | l |}
+       \hline
+         \textbf{Namo vieta} & \textbf{Grupė} \\ \hline
+    Senamiestis, Užupis, Žvėrynas & 4 \\ \hline
+    Valakampiai, Šnipiškės & 3 \\ \hline
+    Antakalnis, Bajorai, Baltupiai, Kalnėnai, Santariškės, Tarandė, Verkiai, Visoriai, Žirmūnai, Zujūnai & 2 \\ \hline
+    Aukštieji Paneriai, Balsiai, Dvarčionys, Grigiškės, Naujoji Vilnia, Pagiriai, Pavilnys, Pilaitė, Salininkai, Trakų Vokė, Vilkpėdė, Žemieji Paneriai & 1 \\ \hline
+    \end{tabular}
+\end{center}
+\end{table}
+\end{frame}
+
+\begin{frame} 
+    \frametitle{Duomenų analizė: pagrindiniai statistiniai rodikliai} 
+           \begin{itemize}
+	\Large \item Nagrinėjamas vienas kvadratinis metras:
+             \end{itemize}
+\begin{table}[H]
+\begin{center}
+ \begin{tabular}{| l | l | l |}
+    \hline
+    Duomenų skaičius & 364 \\ \hline
+    Aritmetinis vidurkis & 3698 Lt \\ \hline
+    Standartinis nuokrypis & 2418 Lt \\ \hline
+    Minimumas & 1018 Lt\\ \hline
+    Maksimumas & 18041 Lt\\ \hline
+    Mediana&3146 Lt  \\ 
+    \hline
+        \end{tabular}
+        \end{center}
+        \end{table}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Namo kainos ir vieno kvadratinio metro kainos histogramos} 
+    \begin{figure}[H]
+  \centering
+    \includegraphics[width=0.6\textwidth, height=0.6\textwidth]{4a.pdf}
+%\caption{Namų sklaidos diagrama.}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Vilniaus miesto rajonų skirstymas į grupes}
+    \begin{figure}[H]
+  \centering
+    \includegraphics[width=0.6\textwidth, height=0.6\textwidth]{Gr4.pdf} 
+ % \caption{Vilniaus miesto rajonų skirstymas į grupes.}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{ Ryšiai tarp namo kainos ir kainą lemiančių veiksnių}
+  \begin{table}[H]
+%\emph{\caption{Namų grupavimas pagal namo vietą}}
+        \begin{center}
+        \begin{tabular}{ | p{5,5cm} | c |}
+       \hline
+       \textbf{Veiksnys} & \textbf{Ryšys} \\ \hline
+    Namo vieta & 0,664\\ \hline
+    Fizinė būklė & 0,463 \\ \hline
+    Atstumas & -0,379 \\ \hline
+    Namo tipas & -0,052 \\ \hline
+    Kambarių skaičius & 0,320 \\ \hline
+    Sodai & -0,261 \\ \hline
+    Statyba & 0,045 \\ \hline
+    Namo plotas & 0,472 \\ \hline
+    Sklypo plotas & 0,105 \\ \hline
+    Buitinė įranga ir baldai & 0,137 \\ \hline
+    Namą laikančiųjų konstrukcijų rūšis & 0,199 \\ \hline
+    \end{tabular}
+\end{center}
+\end{table} 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Pradinis regresinis modelis}   
+\begin{align*}
+log(Kaina)&=C+\beta_1\cdot Gr2+\beta_2\cdot  Gr3+\beta_3\cdot Gr4\\&+\beta_4\cdot Sodai+\beta_5\cdot Ireng2+\beta_6\cdot Ireng3\\&+\beta_7\cdot Ireng4+\beta_8\cdot Stat+\beta_9\cdot Mur\\&+\beta_{10}\cdot log(Nplotas)+
+\beta_{11}\cdot log(Splotas)\\&+\beta_{12}\cdot log(Atstumas)+ \beta_{13}\cdot Baldai\\&+\beta_{14}\cdot Tipas+\beta_{15}\cdot log(Kamb)+e
+\end{align*}
+
+\end{frame}
+
+
+
+\begin{frame}
+   \frametitle{Geriausias regresinis modelis}
+\begin{itemize}
+         \item Geriausio modelio koeficientų reikšmės:
+%\begin{align*}
+%log(Kaina)&=9,534+0,234\cdot Gr2+0,618\cdot  Gr3 \\&
+%+0,1,029\cdot Gr4-0,188\cdot Sodai\\&+0,205\cdot Ireng2+0,335\cdot Ireng3\\&+0,491\cdot Ireng4+0,355\cdot Statyba\\&-0,183\cdot log(Atstumas)
+%\end{align*}
+\begin{table}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+  \hline
+\textbf{Kintamasis} & \textbf{Koeficiento reikšmė}\\ \hline
+{Gr2} & 0,234\\ \hline
+{Gr3}& 0,618\\ \hline
+{Gr4}& 1,029\\ \hline
+{Sodai}& -0,188\\ \hline
+{Ireng2}& 0,239\\ \hline
+{Ireng3}& 0,399\\ \hline
+{Ireng4}& 0,674\\ \hline
+{Stat}& 0,321\\ \hline
+{Mur}&0,137\\ \hline
+{log(Nplotas)}& 0,572\\ \hline
+\end{tabular}
+\end{table}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Modelio tinkamumas}
+\begin{itemize}
+           \item Gautasis R$^2$=0,76;
+          \item Visų t testų p< 0,05;
+          \item Koeficientų ženklai atitinka koreliacijas;
+         \item Paklaidos yra normaliosios;
+         \item Visi dispersijos mažėjimo daugikliai, t.y. VIF< 4 (nėra multikolinearumo problemos).
+    \end{itemize}
+ \end{frame}
+
+\begin{frame}
+    \frametitle{Išvados}  
+    \begin{itemize}
+           % \item Namų kainas veikia namo vieta, fizinė būklė, namo tipas, laikančiųjų konstrukcijų rūšis, namo, sklypo plotas, priklausymas sodų bendrijoms, atstumas iki Vilniaus miesto centro.
+	\large \item Didžiausią įtaką namo kainai turintys veiksniai: 
+                      \begin{itemize}
+	            \item  Namo vieta: jei namas patenka į ketvirtą namo vietos grupę, tai vidutinė kaina padidėja 102,9 \%.
+                        \item Fizinė būklė: jei namas priklauso ketvirtai fizinės būklės grupės, tai vidutinė kaina padidėja 67,4 \%.	
+                       \item Namo plotas: jei namo plotas padidėja 1 \%, tai vidutinė namo kaina padidėja 57,2 \%.
+                   \end{itemize}
+
+\end{itemize}
+\end{frame}
+
+
+
+\end{document}
+
