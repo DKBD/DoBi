@@ -45,7 +45,7 @@ $E(X_t-X_{t-1})=t\mu_1-(t-1)\mu_1=\mu_1$, iš viso tokių empirinių vidurkių l
 \smallskip\\
 Kadangi atsitiktiniai dydžiai $X_1-X_0$, $X_2-X_1$, ... , $X_t-X_{t-1}$ yra vienodai pasiskirstę, todėl šių atsitiktinių dydžių pasiskirstymo funkcijos sutampa, o taip pat sutampa ir empiriniai vidurkiai ir dispersijos. \\
 Tarkime $VarX_1=\sigma_1^2$ ir $X_0=0$, tada \\
-$Var(X_1-X_0)=\sigma_1^2$, nes $X_0=0$, todėl kai pridėsime arba atimsime $X_0$ nieko nepasikeisime, gauname, kad\\
+$Var(X_1-X_0)=\sigma_1^2$, nes $X_0=0$, todėl kai pridėsime arba atimsime $X_0$ nieko nepasikeis, gauname, kad\\
 $Var(X_2)=Var(X_2-X_0)=Var(X_2-X_1+X_1-X_0)=Var(X_2-X_1)+Var(X_1-X_0)$\\
 Žinome, kad $Var(X_1-X_0)=Var(X_2-X_1)=Var(X_t-X_{t-1})=\sigma_1^2$, todėl\\
 $Var(X_2-X_1)+Var(X_1-X_0)=\sigma_1^2+\sigma_1^2=2\sigma_1^2$\\
@@ -54,7 +54,7 @@ $ Var(X_t)= Var(X_t-X_{t-1}+X_{t-1}-...-X_1+X_1-X_0)=Var(X_t-X_{t-1})+...+Var(X_
 \item $var(X_t - X_s)=\sigma_1^2(t - s)$,\\
 Iš $(a)$ dalies gauname, kad $Var(X_t)=t\sigma_1^2$ ir $Var(X_s)=s\sigma_1^2$. Tada, naudojantis tuo, kad prieaugiai yra nepriklausomi gauname, jog $Var(X_3-X_1)=Var(X_3-X_2+X_2-X_1)=Var(X_3-X_2)+Var(X_2-X_1)=\sigma_1^2+\sigma_1^2=2\sigma_1^2$\\
 ...\\
-$Var(X_t-X_s)=Var(X_t-X_{t-1}+...+X_{s+1}-X_s)=Var(X_t-X_{t-1})+...+Var(X_{s+1}-X_s))=\sigma_1^2+...+\sigma_1^2=\sigma_1^2(t-s)$, nes tokių sumų bus t-s.
+$Var(X_t-X_s)=Var(X_t-X_{t-1}+...+X_{s+1}-X_s)=Var(X_t-X_{t-1})+...+Var(X_{s+1}-X_s)=\sigma_1^2+...+\sigma_1^2=\sigma_1^2(t-s)$, nes tokių sumų bus t-s.
 \end{enumerate}
 
 \item (2 taškai) Įrodykite, kad atsitiktinis procesas yra tolydus kvadratinio vidurkio prasme tada ir tik tada, jei jo autokoreliacijos funkcija $Q_X(t,s)$ yra tolydi.\\
@@ -73,14 +73,15 @@ Funkcija $Q_X=EX_tX_s$ yra tolydi, kai ji yra tolydi ir pagal pirmą ir pagal an
 \begin{equation}
  \begin{split}
 \lim_{h \to 0}E|X_{t+h}-&X_t|^2=\lim_{h \to 0}EX_{t+h}^2 -2\lim_{h \to 0}EX_{t+h}X_t +\lim_{h \to 0}EX_t^2 \newln =
-\lim_{h \to 0}EX_{t+h}^2 -2\lim_{h \to 0}EX_{t+h}X_t +EX_t^2=0
+\lim_{h \to 0}EX_{t+h}^2 -2\lim_{h \to 0}EX_{t+h}X_t +EX_t^2=\lim_{h \to 0}Q(t+h,t+h)-\newln2\lim_{h \to 0} Q(t,t+h)+Q(t,t)=0
 \end{split}
 \end{equation}
 O iš to, kad riba egzistuoja ir yra lygi 0, išplaukia, kad taip bus tik tada, kai
-\begin{equation}
-\lim_{h \to 0}EX_{t+h}^2 -2\lim_{h \to 0}EX_{t+h}X_t +EX_t^2=EX_t^2-2EX_t^2+EX_t^2=0
-\end{equation}
-taigi gauname, kad $\lim_{h \to 0}EX_{t+h}X_{t+h}=EX_tX_t$, o tai reiškia, kad $Q_X(t,s)$ yra tolydi ir pagal pirmą ir pagal antrą kintamąjį. Ką ir reikėjo įrodyti.\\
+\smallskip\\
+$\lim_{h \to 0}Q(t+h,t+h)=Q(t,t)$ \\
+$\lim_{h \to 0} Q(t,t+h)= Q(t,t)$
+\smallskip\\
+O tai reiškia, kad $Q_X(t,s)$ yra tolydi ir pagal pirmą ir pagal antrą kintamąjį. Ką ir reikėjo įrodyti.\\
 \smallskip \\
 (2) " <="
 \smallskip \\ Tarkim autokoreliacijos funkcija yra tolydi. Tuomet\\
@@ -107,7 +108,7 @@ $\Gamma(t+h,t+h)-2\Gamma(t+h,t)+\Gamma(t,t)=2\Gamma(0,0)-2\Gamma(t+h,t)=2\Gamma(
 \smallskip \\
 $\Gamma(h,0)=E((X_h -EX_h)(X_0-EX_0))=EX_hX_0-EX_hEX_0-EX_hEX_0+EX_hEX_0$\\
 \smallskip \\
-Kadangi atsitiktinis procesas yra silpnai stacionarus, tai $EX_0=EX_h$ ir $\lim_{h \to 0} EX_hEX_0=EX_0EX_0$\\
+Kadangi atsitiktinis procesas yra silpnai stacionarus, tai $EX_0=EX_h$ ir $\lim_{h \to 0} EX_hX_0=EX_0X_0$\\
 $\lim_{h \to 0} [EX_hX_0-EX_hEX_0-EX_hEX_0+EX_hEX_0]=EX_0X_0-EX_0EX_0-EX_0EX_0+EX_0EX_0=\Gamma(0,0)$\\
 Todėl
 \begin{equation}
@@ -132,9 +133,9 @@ $, gauname, kad $(EX)^2 \leq E X^2$, todėl
 \lim_{h \to 0}E(X_{t+h}-X_t)^2 \geq \lim_{h \to 0}(E(X_{t+h}-X_t))^2
 \end{equation}
 Kadangi pakelta kvadratu, tai vidurkis (atitinkamai ir riba) gali būti tik ne neigiama, t.y.
-$\lim_{h \to 0}(E(X_{t+h}-X_t))^2 \geqslant0$.
+$\lim_{h \to 0}(E(X_{t+h}-X_t))^2 \geqslant0$. Kadangi $ \lim_{h \to 0}E(X_{t+h}-X_t)^2=0$ tai ir $\lim_{h \to 0}(E(X_{t+h}-X_t))^2=0$
 \begin{equation}
-\lim_{h \to 0}\sqrt {E(X_{t+h}-X_t)^2}= \lim_{h \to 0}|E(X_{t+h}-X_t)|
+\lim_{h \to 0}\sqrt {(E(X_{t+h}-X_t))^2}= \lim_{h \to 0}|E(X_{t+h}-X_t)|
 \end{equation}
 %Kadangi $(E(X_{t+h}-X_t))^2=(E(X_{t}-X_{t+h}))^2$, tai \\
 %$ \lim_{h \to 0}|E(X_{t+h}-X_t)| = \lim_{h \to 0}|E(X_{t}-X_{t+h})|=0$
@@ -161,6 +162,6 @@ Vinerio proceso $\{W_t, t\geqslant 0\}$ autokoreliacijos funkcija užrašoma tai
 $Q_X(W_{t_1},W_{t_2})=\frac{\Gamma(W_{t_1},W_{t_2})}{\sigma_{W_{t_1}}\sigma_{W_{t_2}}}=\frac{\min(t_1,t_2)}{\sqrt{t_1t_2}}=\alpha \min(t_1,t_2)$, čia $\alpha=\frac{1}{\sqrt{t_1t_2}}$.\\
 Nagrinėkime ribą, kai $t_1$ ir $t_2$ artėja į $(t_0,t_0)$.\\
 $|Q_X(t_0+\epsilon_1,t_0+\epsilon_2)-Q_X(t_0,t_0)|=\alpha|\min(t_0+\epsilon_1,t_0+\epsilon_2)-t_0|\leqslant\alpha\max(\epsilon_1,\epsilon_2)$\\
-Kai $\epsilon_1$ ir $\epsilon_2$ pasiekia nulį, tai $|Q_X(t_0+\epsilon_1,t_0+\epsilon_2)-Q_X(t_0,t_0)|$ tampa lygus nuliui. Tokiu būdu autokoreliacijos funkcija yra tolydi taške $(t_0,t_0)$, dėl to Vinerio procesas yra tolydus kvadratinio vidurkio prasme. 
+Kai $\epsilon_1$ ir $\epsilon_2$ pasiekia nulį, tai $|Q_X(t_0+\epsilon_1,t_0+\epsilon_2)-Q_X(t_0,t_0)|$ tampa lygus nuliui. Tokiu būdu autokoreliacijos funkcija yra tolydi taške $(t_0,t_0)$, dėl to (ir 3 užduoties) Vinerio procesas yra tolydus kvadratinio vidurkio prasme.
 \end{enumerate}
 \end{document}
