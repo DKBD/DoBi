@@ -7,7 +7,6 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{enumerate}
-%\usepackage{array}
 \textwidth = 425pt
 \newcommand{\newln}{\\&\quad\quad{}}
 \usepackage{amsmath}
@@ -23,12 +22,11 @@
 
 \begin{document}
 
-\title{Atsitiktiniai procesai}
-\date{}
-\author{}
+\title{Atsitiktinių procesų apibrėžimas ir klasifikavimas}
+\author{Justyna Ziminskaja ir Birutė Žabinskaitė, Ekonometrija III kursas, 1 grupė}
 \maketitle
 \begin{enumerate}
-   \item (2 taškai) Tegu $\{X_t, t\ge0\}$ atsitiktinis procesas su nepriklausomais stacionariais prieaugiais ir $X(0)=0$. Įrodykite, kad $EX_t=\mu_{1}t$, čia $\mu_1=EX_1$.
+\item (2 taškai) Tegu $\{X_t, t\ge0\}$ atsitiktinis procesas su nepriklausomais stacionariais prieaugiais ir $X(0)=0$. Įrodykite, kad $EX_t=\mu_{1}t$, čia $\mu_1=EX_1$.
 \smallskip \\
 Kadangi atsitiktinis procesas $\{X_t, t\ge0\}$ turi stacionarius prieaugius, tai atsitiktiniai dydžiai $X_{t+h}-X_{s+h}$ ir $X_{t}-X_{s}$ yra vienodai pasiskirstę su visais $s<t \in T$ ir tokiais $h>0$, kad $t+h,s+h \in T$. Taigi, gauname, kad atsitiktiniai dydžiai $X_1-X_0$, $X_2-X_1$, ... , $X_t-X_{t-1}$ turi vienodus skirstinius, todėl šių atsitiktinių dydžių pasiskirstymo funkcijos sutampa, o taip pat sutampa ir empiriniai vidurkiai. \\
 Tarkime $EX_1=\mu_1$ ir $X_0=0$, tada \\
@@ -63,11 +61,11 @@ Atsitiktinis procesas yra tolydus kvadratinio vidurkio prasme taške $t\in T$, k
 \begin{equation}
 \lim_{h \to 0}E|X_{t+h}-X_t|^2=0,
 \end{equation}
-Funkcija $Q_X=EX_tX_s$ yra tolydi, kai ji yra tolydi ir pagal pirmą ir pagal antrą kintamąjį, taigi turime
+Funkcija $Q_X=EX_tX_s$ yra tolydi, kai ji yra tolydi ir pagal pirmą ir pagal antrą kintamąjį, tai
 \begin{equation}
 \lim_{h \to 0}EX_{t+h}X_{s+h}=EX_t X_s,
 \end{equation}
-(1) " =>"
+(1) "=>"
 \smallskip \\ Tarkim atsitiktinis procesas yra tolydus kvadratinio vidurkio prasme. Tuomet\\
  $E|X_{t+h}-X_t|^2=E(X_{t+h}-X_t)^2=E(X_{t+h}^2-2X_{t+h}X_t+X_t^2)= EX_{t+h}^2-2EX_{t+h}X_t+EX_t^2 $
 \begin{equation}
@@ -92,24 +90,25 @@ $\lim_{h \to 0}EX_{t+h}X_{s+h}=EX_t X_s$ ir $EX_t^2<\infty$. Tada \\
 \lim_{h \to 0}EX_{t+h}^2 -2\lim_{h \to 0}EX_{t+h}X_t +EX_t^2 \newln =EX_t^2-2EX_t^2+EX_t^2=0
 \end{split}
 \end{equation}
-Galėjome ribos ženklą įkelti prieš kiekvieną narį, nes žinome, iš autokoreliacijos funkcijos tolydumo, kad kiekvieno nario riba egzistuoja.
+Galėjome ribos ženklą įkelti prieš kiekvieną narį, nes žinome, iš autokoreliacijos funkcijos tolydumo, kad kiekvieno nario riba egzistuoja. Taigi, įrodėmė, kad atsistiktinis procesas yra tolydus kvadratinio vidurkio prasme.
 
 
 
-\item (1 taškas) Įrodykite, kad silpnai stacionarus procesas yra tolydus kvadratinio vidurkio prasme, jei proceso vidutinė galia $R_X(t):=Q_X(t,t)$ yra tolydi taške 0.\\
+\item (1 taškas) Įrodykite, kad silpnai stacionarus procesas yra tolydus kvadratinio vidurkio prasme, jei proceso vidutinė galia $R_X(t):=Q_X(0,h)$ yra tolydi taške 0.\\
 \smallskip \\
-Tarkime procesas yra silpnai stacionarus, t.y. $EX_t=EX_{t+h}$ ir kovariacinė funkcija $\Gamma(t,t+h)=\Gamma(0,h)$. Tegul proceso vidutinė galia $R_{X}(t)=Q_X(t,t)$ yra tolydi taške (0,0), t.y $R_{X}(t)=Q_X(t,t)=EX_tX_t$ ir kai $t->0$, tai $EX_tX_t=EX_0X_0$. Atsitiktinis procesas bus tolydus kvadratinio vidurkio prasme, jei $ \lim_{h \to 0}E|X_{t+h}-X_t|^2=0$, kadangi modulis pakeltas kvadratu, tai šią lygybę galime perrašyti, kaip $\lim_{h \to 0}E(X_{t+h}-X_t)^2=0$. \\
+Tarkime procesas yra silpnai stacionarus, t.y. $EX_t=EX_{t+h}$ ir kovariacinė funkcija $\Gamma(t,t+h)=\Gamma(0,h)$. Tegul proceso vidutinė galia $R_{X}(t)=Q_X(0,h)$ yra tolydi taške (0,0), t.y $R_{X}(t)=Q_X(0,h)=EX_0X_h$ ir kai $h->0$, tai $EX_0X_h=EX_0X_0$. Atsitiktinis procesas bus tolydus kvadratinio vidurkio prasme, jei $ \lim_{h \to 0}E|X_{t+h}-X_t|^2=0$, kadangi modulis pakeltas kvadratu, tai šią lygybę galime perrašyti, kaip $\lim_{h \to 0}E(X_{t+h}-X_t)^2=0$. \\
 \smallskip \\
 $\Gamma(t,t+h)=E((X_t -EX_t)(X_{t+h}-EX_{t+h}))$\\
 $E(X_{t+h}-X_t)^2=E(X_{t+h}-EX_{t+h}-X_t+EX_t)^2=E(X_{t+h}-EX_{t+h}-(X_t-EX_t))^2=E(X_{t+h}-EX_{t+h})^2- 2E(X_{t+h}-EX_{t+h})(X_t-EX_t)+E(X_t-EX_t)^2=\Gamma(t+h,t+h)-2\Gamma(t+h,t)+\Gamma(t,t)$
 \smallskip\\
-Kadangi $\Gamma(t+h,t+h)=\Gamma(h,h)=\Gamma(0,0)=\Gamma(t,t)$ ir $\Gamma(t,t+h)=\Gamma(0,h)$, nes procesas -- silpnai stacionarus, tuomet \\
+Kadangi $\Gamma(t+h,t+h)=\Gamma(h,h)=\Gamma(0,0)=\Gamma(t,t)$ ir $\Gamma(t,t+h)=\Gamma(0,h)$, nes procesas yra silpnai stacionarus, tai
+\smallskip\\
 $\Gamma(t+h,t+h)-2\Gamma(t+h,t)+\Gamma(t,t)=2\Gamma(0,0)-2\Gamma(t+h,t)=2\Gamma(0,0)-2\Gamma(h,0)$
+$\Gamma(h,0)=E((X_h -EX_h)(X_0-EX_0))=EX_hX_0-EX_hEX_0-EX_hEX_0+EX_hEX_0$
 \smallskip \\
-$\Gamma(h,0)=E((X_h -EX_h)(X_0-EX_0))=EX_hX_0-EX_hEX_0-EX_hEX_0+EX_hEX_0$\\
-\smallskip \\
-Kadangi atsitiktinis procesas yra silpnai stacionarus, tai $EX_0=EX_h$ ir $\lim_{h \to 0} EX_hX_0=EX_0X_0$\\
-$\lim_{h \to 0} [EX_hX_0-EX_hEX_0-EX_hEX_0+EX_hEX_0]=EX_0X_0-EX_0EX_0-EX_0EX_0+EX_0EX_0=\Gamma(0,0)$\\
+Kadangi atsitiktinis procesas yra silpnai stacionarus, tai $EX_0=EX_h$ ir $\lim_{h \to 0} EX_hX_0=EX_0X_0$, gauname, kad\\
+$\lim_{h \to 0} [EX_hX_0-EX_hEX_0-EX_hEX_0+EX_hEX_0]=EX_0X_0-EX_0EX_0-EX_0EX_0+EX_0EX_0=\Gamma(0,0)$
+\smallskip
 Todėl
 \begin{equation}
 \lim_{h \to 0}E(X_{t+h}-X_t)^2=\lim_{h \to 0}(2\Gamma(0,0)-2\Gamma(h,0))=2\Gamma(0,0)-2\Gamma(0,0)=0
@@ -137,8 +136,6 @@ $\lim_{h \to 0}(E(X_{t+h}-X_t))^2 \geqslant0$. Kadangi $ \lim_{h \to 0}E(X_{t+h}
 \begin{equation}
 \lim_{h \to 0}\sqrt {(E(X_{t+h}-X_t))^2}= \lim_{h \to 0}|E(X_{t+h}-X_t)|
 \end{equation}
-%Kadangi $(E(X_{t+h}-X_t))^2=(E(X_{t}-X_{t+h}))^2$, tai \\
-%$ \lim_{h \to 0}|E(X_{t+h}-X_t)| = \lim_{h \to 0}|E(X_{t}-X_{t+h})|=0$
 \smallskip \\ Nagrinėkime 2 atvejus: \\
 \begin{enumerate}
 \item$ E(X_{t+h}-X_t) \geq 0$, tada
@@ -157,11 +154,11 @@ Iš to išplaukia, kad $\lim_{h \to 0}E|X_{t+h}-X_t|=0.$
 
 \item (2 taškai) Įrodykite, kad Vynerio procesas yra tolydus kvadratinio vidurkio prasme.\\
 \smallskip \\
-Vinerio proceso $\{W_t, t\geqslant 0\}$ autokoreliacijos funkcija užrašoma taip
+Vynerio proceso autokoreliacijos funkcija užrašoma taip
 \smallskip\\
 $Q_X(W_{t_1},W_{t_2})=\frac{\Gamma(W_{t_1},W_{t_2})}{\sigma_{W_{t_1}}\sigma_{W_{t_2}}}=\frac{\min(t_1,t_2)}{\sqrt{t_1t_2}}=\alpha \min(t_1,t_2)$, čia $\alpha=\frac{1}{\sqrt{t_1t_2}}$.\\
 Nagrinėkime ribą, kai $t_1$ ir $t_2$ artėja į $(t_0,t_0)$.\\
 $|Q_X(t_0+\epsilon_1,t_0+\epsilon_2)-Q_X(t_0,t_0)|=\alpha|\min(t_0+\epsilon_1,t_0+\epsilon_2)-t_0|\leqslant\alpha\max(\epsilon_1,\epsilon_2)$\\
-Kai $\epsilon_1$ ir $\epsilon_2$ pasiekia nulį, tai $|Q_X(t_0+\epsilon_1,t_0+\epsilon_2)-Q_X(t_0,t_0)|$ tampa lygus nuliui. Tokiu būdu autokoreliacijos funkcija yra tolydi taške $(t_0,t_0)$, dėl to (ir 3 užduoties) Vinerio procesas yra tolydus kvadratinio vidurkio prasme.
+Kai $\epsilon_1$ ir $\epsilon_2$ pasiekia nulį, tai $|Q_X(t_0+\epsilon_1,t_0+\epsilon_2)-Q_X(t_0,t_0)|$ tampa lygus nuliui. Tokiu būdu autokoreliacijos funkcija yra tolydi taške $(t_0,t_0)$, dėl to (ir 3 užduoties) Vynerio procesas yra tolydus kvadratinio vidurkio prasme.
 \end{enumerate}
 \end{document}
